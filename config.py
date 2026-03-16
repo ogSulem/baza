@@ -30,6 +30,19 @@ def load_config() -> Config:
                 admin_ids.add(int(part))
 
     db_path = os.getenv("DB_PATH", "data.db").strip() or "data.db"
+    # Docker-friendly default: if DB_PATH is relative and /data is mounted, store DB under /data
+    if not os.path.isabs(db_path):
+        try:
+            if os.path.isdir("/data"):
+                db_path = os.path.join("/data", db_path)
+        except Exception:
+            pass
+    try:
+        parent = os.path.dirname(db_path)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+    except Exception:
+        pass
 
     raw_cities = os.getenv("CITIES", "").strip()
     cities: dict[str, str] = {}
