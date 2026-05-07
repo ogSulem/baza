@@ -67,6 +67,8 @@ class Database:
                     phone TEXT NOT NULL,
                     city TEXT,
                     category TEXT NOT NULL,
+                    name TEXT,
+                    source TEXT,
                     created_at TEXT NOT NULL
                 );
 
@@ -97,6 +99,10 @@ class Database:
             cols = {row["name"] for row in await cur.fetchall()}
             if "city" not in cols:
                 await db.execute("ALTER TABLE suppliers ADD COLUMN city TEXT")
+            if "name" not in cols:
+                await db.execute("ALTER TABLE suppliers ADD COLUMN name TEXT")
+            if "source" not in cols:
+                await db.execute("ALTER TABLE suppliers ADD COLUMN source TEXT")
 
             cur = await db.execute("PRAGMA table_info(customers)")
             cols = {row["name"] for row in await cur.fetchall()}
@@ -406,12 +412,84 @@ class Database:
         finally:
             await db.close()
 
+    async def add_supplier(
+        self,
+        *,
+        user_id: int,
+        phone: str,
+        city: str | None,
+        category: str,
+        name: str | None,
+        source: str | None,
+    ) -> None:
+        now = dt.datetime.utcnow().isoformat()
+        db = await self.connect()
+        try:
+            await db.execute(
+                """
+                INSERT INTO suppliers(user_id, phone, city, category, name, source, created_at)
+                VALUES(?, ?, ?, ?, ?, ?, ?)
+                """,
+                (user_id, phone, city, category, name, source, now),
+            )
+            await db.commit()
+        finally:
+            await db.close()
+
     async def export_rows(self, role: str) -> list[dict]:
         table = "suppliers" if role == "supplier" else "customers"
         db = await self.connect()
         try:
             cur = await db.execute(
                 f"SELECT id, user_id, phone, city, category, created_at FROM {table} ORDER BY id DESC"
+            )
+            rows = await cur.fetchall()
+            return [dict(r) for r in rows]
+        finally:
+            await db.close()
+
+    async def find_suppliers(self, *, category: str, city: str | None, limit: int = 30) -> list[dict]:
+        category = (category or "").strip()
+        if not category:
+            return []
+
+        db = await self.connect()
+        try:
+            if city:
+                cur = await db.execute(
+                    """
+                    SELECT s.user_id, s.phone, s.city, s.category, s.name, s.source, s.created_at
+                    FROM suppliers s
+                    JOIN (
+                        SELECT user_id, MAX(id) AS max_id
+                        FROM suppliers
+                        WHERE LOWER(category) = LOWER(?) AND city = ?
+                        GROUP BY user_id
+                    ) last
+                      ON last.user_id = s.user_id AND last.max_id = s.id
+                    ORDER BY s.id DESC
+                    LIMIT ?
+                    """,
+                    (category, city, int(limit)),
+                )
+                rows = await cur.fetchall()
+                return [dict(r) for r in rows]
+
+            cur = await db.execute(
+                """
+                SELECT s.user_id, s.phone, s.city, s.category, s.name, s.source, s.created_at
+                FROM suppliers s
+                JOIN (
+                    SELECT user_id, MAX(id) AS max_id
+                    FROM suppliers
+                    WHERE LOWER(category) = LOWER(?)
+                    GROUP BY user_id
+                ) last
+                  ON last.user_id = s.user_id AND last.max_id = s.id
+                ORDER BY s.id DESC
+                LIMIT ?
+                """,
+                (category, int(limit)),
             )
             rows = await cur.fetchall()
             return [dict(r) for r in rows]

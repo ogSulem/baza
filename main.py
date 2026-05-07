@@ -328,6 +328,48 @@ async def main() -> None:
         except Exception as e:
             logging.warning("Failed to send main role message: %r", e)
 
+    def format_supplier_line(s: dict) -> str:
+        phone = str(s.get("phone") or "").strip()
+        name = str(s.get("name") or "").strip()
+        source = str(s.get("source") or "").strip()
+        city = str(s.get("city") or "").strip()
+
+        head = ""
+        if phone and name:
+            head = f"{name}: {phone}"
+        elif phone:
+            head = phone
+        elif name:
+            head = name
+        else:
+            head = "Контакт"
+
+        if city:
+            head = f"{head} ({city})"
+
+        if source:
+            return f"{head}\n{source}"
+        return head
+
+    async def build_suppliers_text(*, category: str, city: str | None) -> str:
+        suppliers = await db.find_suppliers(category=category, city=city)
+        if suppliers:
+            lines = ["Найдены поставщики:", ""]
+            for s in suppliers:
+                lines.append(format_supplier_line(s))
+                lines.append("")
+            return "\n".join(lines).strip()
+
+        suppliers_any = await db.find_suppliers(category=category, city=None)
+        if suppliers_any:
+            lines = ["В вашем городе поставщики не найдены.", "", "Другие города:", ""]
+            for s in suppliers_any:
+                lines.append(format_supplier_line(s))
+                lines.append("")
+            return "\n".join(lines).strip()
+
+        return "Поставщики не найдены по вашему запросу."
+
     async def show_role_step(chat_id: int, user_id: int, phone: str, city: str | None) -> None:
         pending = await db.get_pending(user_id)
         msg_id = pending.bot_message_id if pending else None
@@ -532,25 +574,41 @@ async def main() -> None:
             except Exception:
                 pass
 
-            await db.save_entry(
-                user_id=message.from_user.id,
-                role=pending.role,
-                phone=pending.phone,
-                city=pending.city,
-                category=product,
-            )
+            if pending.role == "supplier":
+                await db.save_entry(
+                    user_id=message.from_user.id,
+                    role=pending.role,
+                    phone=pending.phone,
+                    city=pending.city,
+                    category=product,
+                )
+                await db.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
+                try:
+                    await bot.edit_message_text(
+                        chat_id=message.chat.id,
+                        message_id=pending.bot_message_id,
+                        text="Вы успешно записаны в базу, с вами скоро свяжутся.",
+                        reply_markup=kb_ok().as_markup(),
+                    )
+                except Exception:
+                    pass
+
+                await send_main_role_message(message.chat.id, message.from_user.id, pending.phone, pending.city)
+                return
+
+            suppliers = await db.find_suppliers(category=product, city=pending.city)
             await db.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
+            text = await build_suppliers_text(category=product, city=pending.city)
+
             try:
                 await bot.edit_message_text(
                     chat_id=message.chat.id,
                     message_id=pending.bot_message_id,
-                    text="Вы успешно записаны в базу, с вами скоро свяжутся.",
+                    text=text,
                     reply_markup=kb_ok().as_markup(),
                 )
             except Exception:
                 pass
-
-            await send_main_role_message(message.chat.id, message.from_user.id, pending.phone, pending.city)
             return
 
         if pending.state == "admin_mail" and is_admin(cfg, message.from_user.id) and pending.bot_message_id:
@@ -875,26 +933,44 @@ async def main() -> None:
             await cb.answer()
             return
 
-        await db.save_entry(
-            user_id=cb.from_user.id,
-            role=pending.role,
-            phone=pending.phone,
-            city=pending.city,
-            category=cat["name"],
-        )
+        if pending.role == "supplier":
+            await db.save_entry(
+                user_id=cb.from_user.id,
+                role=pending.role,
+                phone=pending.phone,
+                city=pending.city,
+                category=cat["name"],
+            )
+            await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+
+            try:
+                await bot.edit_message_text(
+                    chat_id=cb.message.chat.id,
+                    message_id=pending.bot_message_id,
+                    text="Вы успешно записаны в базу, с вами скоро свяжутся.",
+                    reply_markup=kb_ok().as_markup(),
+                )
+            except Exception:
+                pass
+
+            await send_main_role_message(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
+            await cb.answer()
+            return
+
+        suppliers = await db.find_suppliers(category=cat["name"], city=pending.city)
         await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+        text = await build_suppliers_text(category=cat["name"], city=pending.city)
 
         try:
             await bot.edit_message_text(
                 chat_id=cb.message.chat.id,
                 message_id=pending.bot_message_id,
-                text="Вы успешно записаны в базу, с вами скоро свяжутся.",
+                text=text,
                 reply_markup=kb_ok().as_markup(),
             )
         except Exception:
             pass
 
-        await send_main_role_message(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
         await cb.answer()
 
     @dp.callback_query(F.data.startswith("admin:"))
