@@ -1,0 +1,10 @@
+﻿8 ['╩юэЄръЄ√ яюёЄрт∙шъют.', '', '', '', '89831779695', '╚трэ'] ('+79831779695', '╚трэ', None)
+9 ['https://www.avito.ru/brands/5341cdc5c1eb6e44f07b1a49cbf73944/all?iid=2385753490&page_from=from_item_messenger&sellerId=b028c0d6a8155d3f8954640ae85c7d8f', '└ыхъёхщ'] (None, '└ыхъёхщ', 'https://www.avito.ru/brands/5341cdc5c1eb6e44f07b1a49cbf73944/all?iid=2385753490&page_from=from_item_messenger&sellerId=b028c0d6a8155d3f8954640ae85c7d8f')
+10 ['https://www.avito.ru/brands/ba60ed9d9b5046a2a496a5bc2bbdbbed/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7241788028&sellerId=c4317bbf3573450f4ad62550a7c3236b', '╩юьярэш '] (None, '╩юьярэш ', 'https://www.avito.ru/brands/ba60ed9d9b5046a2a496a5bc2bbdbbed/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7241788028&sellerId=c4317bbf3573450f4ad62550a7c3236b')
+11 ['https://www.avito.ru/brands/d709928e571687ef38a09e8391fd475f/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=3712039072&sellerId=d7c0416127cabc704fe196f962bb8af0', '╚╧ ─рэшыютр'] (None, '╚╧ ─рэшыютр', 'https://www.avito.ru/brands/d709928e571687ef38a09e8391fd475f/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=3712039072&sellerId=d7c0416127cabc704fe196f962bb8af0')
+total 165
+altai region suppliers 4
+└ыхъёхщ https://www.avito.ru/brands/53 ╩рЁърё фюьют ш фюЁюушї срэ№
+╩юьярэш  https://www.avito.ru/brands/ba ╩рЁърё фюьют ш фюЁюушї срэ№
+╚╧ ─рэшыютр https://www.avito.ru/brands/d7 ╩рЁърё фюьют ш фюЁюушї срэ№
+╚трэ https://www.avito.ru/user/1bfb ╬с°штър ъЁ√°ш/ёЄхэ

@@ -1,0 +1,4142 @@
+{
+  "cities": [
+    "Анапа",
+    "Барнаул",
+    "Белгород",
+    "Брянск",
+    "Владивосток",
+    "Воронеж",
+    "Дону",
+    "Елец",
+    "Иркутск",
+    "Казань",
+    "Кемерово",
+    "Киров",
+    "Кострома",
+    "Красноярск",
+    "Липецк",
+    "Марий-Эл",
+    "Махачкала",
+    "Москва",
+    "Н.Челны",
+    "Новгород",
+    "Новосибирск",
+    "Омск",
+    "Оренбург",
+    "Пенза",
+    "Пятигорск",
+    "Респ",
+    "Самара",
+    "Санкт Петербург",
+    "Саратов",
+    "Сочи",
+    "Ставрополь",
+    "Сыктывкар",
+    "Тольятти",
+    "Тюмень",
+    "Ульяновск",
+    "Уфа",
+    "Челябинск",
+    "Южно-Сахалинск",
+    "Ярославль",
+    "обл"
+  ],
+  "categories": [
+    "Аренда спецтехники/доставка материалов",
+    "Баня",
+    "Винтовые сваи",
+    "Грузоперевозки",
+    "Каркас домов и дорогих бань",
+    "Крепеж",
+    "Крепеж/метизы",
+    "Обшивка кровли/стен",
+    "Обшивка крыши/стен",
+    "Обшивка стен",
+    "Окна/Двери",
+    "ПВХ",
+    "ПВХ/дерево",
+    "Печной комплект",
+    "Пиломатериал",
+    "Профнастил, обклады",
+    "Сантехника",
+    "Утеплитель, мембраны",
+    "Фундамент",
+    "Электрика",
+    "Электрика/метизы"
+  ],
+  "suppliers": [
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Алексей",
+      "phone": "+72385753490",
+      "source": "https://www.avito.ru/brands/5341cdc5c1eb6e44f07b1a49cbf73944/all?iid=2385753490&page_from=from_item_messenger&sellerId=b028c0d6a8155d3f8954640ae85c7d8f"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Компания",
+      "phone": "+77241788028",
+      "source": "https://www.avito.ru/brands/ba60ed9d9b5046a2a496a5bc2bbdbbed/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7241788028&sellerId=c4317bbf3573450f4ad62550a7c3236b"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ИП Данилова",
+      "phone": "+73712039072",
+      "source": "https://www.avito.ru/brands/d709928e571687ef38a09e8391fd475f/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=3712039072&sellerId=d7c0416127cabc704fe196f962bb8af0"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Кровля",
+      "material": "Алтайский завод профлиста",
+      "category": "Обшивка крыши/стен",
+      "name": "Иван",
+      "phone": "+77250304035",
+      "source": "https://www.avito.ru/user/1bfb38667aa5d0fa9fd6726c87ca3340/profile?iid=7250304035&page_from=from_item_messenger&src=messenger&id=7250304035"
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Утепление",
+      "material": "Алексей",
+      "category": "Обшивка стен",
+      "name": "Склад-магазин \"Кровля\"",
+      "phone": "+77257128684",
+      "source": "https://www.avito.ru/brands/i191762236/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7257128684&sellerId=379a272b0f9ca602cfeccc765c003ebe"
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Электрика",
+      "material": "Электротовары",
+      "category": "Электрика",
+      "name": "ИП",
+      "phone": "+74622886184",
+      "source": "https://www.avito.ru/brands/i6400145/all?gdlkerfdnwq=101&page_from=from_item_card&iid=4622886184&sellerId=e869bbaf6fb931f5a3f8037f35eec5d0"
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Банная печь",
+      "material": "ИП Григорян",
+      "category": "Баня",
+      "name": "Печьмастер",
+      "phone": "+77329876509",
+      "source": "https://www.avito.ru/brands/i165337508/all/remont_i_stroitelstvo?iid=7329876509&page_from=from_item_messenger&sellerId=67c0337f04e9a50ae827635d2a3e3d17"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Банная печь",
+      "material": "Лесной Дом",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Алексей",
+      "phone": "+72385753490",
+      "source": "https://www.avito.ru/brands/5341cdc5c1eb6e44f07b1a49cbf73944/all?iid=2385753490&page_from=from_item_messenger&sellerId=b028c0d6a8155d3f8954640ae85c7d8f"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Банная печь",
+      "material": "Лесной Дом",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Компания",
+      "phone": "+77241788028",
+      "source": "https://www.avito.ru/brands/ba60ed9d9b5046a2a496a5bc2bbdbbed/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7241788028&sellerId=c4317bbf3573450f4ad62550a7c3236b"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Банная печь",
+      "material": "Лесной Дом",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ИП Данилова",
+      "phone": "+73712039072",
+      "source": "https://www.avito.ru/brands/d709928e571687ef38a09e8391fd475f/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=3712039072&sellerId=d7c0416127cabc704fe196f962bb8af0"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Фундамент",
+      "material": "Лидер",
+      "category": "Фундамент",
+      "name": "ГлавФунд",
+      "phone": "+73852533060",
+      "source": "+73852533060"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Кровля",
+      "material": "Алтайский завод профлиста",
+      "category": "Обшивка крыши/стен",
+      "name": "Иван",
+      "phone": "+77250304035",
+      "source": "https://www.avito.ru/user/1bfb38667aa5d0fa9fd6726c87ca3340/profile?iid=7250304035&page_from=from_item_messenger&src=messenger&id=7250304035"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ФидстройМаркет",
+      "phone": "https://www.avito.ru/brands/3a5d79609bc27e510e09f54590a06ba3/all/remont_i_stroitelstvo?ysclid=mij5yk4nu7143328373&sellerId=4c05752c9cfeac73e1dd0f71ed3f1e84",
+      "source": null
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Доска обрезная, брусок, рейки",
+      "phone": "+72658341541",
+      "source": "https://www.avito.ru/user/945d69bb052fbabe9615753c6f937163/profile?iid=2658341541&page_from=from_item_messenger&src=messenger&id=2658341541"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ООО \"УфаСтройСнаб-Лес\" (пиломатериал: доска/вагонка)",
+      "phone": "+71191662069",
+      "source": "https://www.avito.ru/brands/i4053077/all?iid=1191662069&page_from=from_item_messenger&sellerId=1f545ddd08064a15871ff286ada76c7e"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Уфимский свайный завод",
+      "phone": "+77320586770",
+      "source": "https://www.avito.ru/user/329be0ed332dd5cf8b3e33f958929697/profile/all/remont_i_stroitelstvo?id=7320586770&item_type=str_trx&src=item&page_from=from_item_card&iid=7320586770&sellerId=329be0ed332dd5cf8b3e33f958929697"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "СваяПрофи",
+      "phone": "+77755184444",
+      "source": "https://www.avito.ru/brands/13843eb4ca9e8b3cfe6cbb88a366241f/all?src=search_seller_info&iid=7755184444&sellerId=3995da3378acbe818b94f2a407370998"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Фундамент",
+      "phone": "https://www.avito.ru/brands/3dd5e569226c32b7a96d7398bc92c4d5/all?gdlkerfdnwq=101&iid=311219125&item_type=str_trx&page_from=from_item_card&sellerId=2de74d89a1f35c6c093a6c23d7384361",
+      "source": null
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Пластиковые окна",
+      "phone": "+73870014080",
+      "source": "https://www.avito.ru/brands/remont_ufa/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=3870014080&item_type=str_trx&page_from=from_item_card&sellerId=c24baee27de7a778d79e062cbbb65795"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Павел",
+      "phone": "+77208439834",
+      "source": "https://www.avito.ru/brands/i149264331/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=7208439834&sellerId=2e364a04f40903c65cc5b3d3b009f72a"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Игорь",
+      "phone": "https://www.avito.ru/user/7ca98e4078d5b458f9ffc4992f73b760/profile?iid=378476624&page_from=from_item_messenger&src=messenger&id=378476624",
+      "source": null
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Имитация бруса",
+      "phone": "+79025553812",
+      "source": "+79025553812"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Фанера",
+      "phone": "+74232732847",
+      "source": "+74232732847"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ФундМонтаж",
+      "phone": "+79600663627",
+      "source": "+79600663627"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Готика",
+      "phone": "+79089939039",
+      "source": "+79089939039"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Альфа",
+      "phone": "+79244300809",
+      "source": "+79244300809"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Промзапас-ОПТ",
+      "phone": "+79146803619",
+      "source": "+79146803619"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Утеплитель",
+      "phone": "+74232795011",
+      "source": "+74232795011"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Профиль ДВ",
+      "phone": "+78003021962",
+      "source": "+78003021962"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Альфа",
+      "phone": "+74232499777",
+      "source": "+74232499777"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Центр Металлокровли",
+      "phone": "+79046290240",
+      "source": "+79046290240"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "ОПМК",
+      "phone": "+74232790511",
+      "source": "+74232790511"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Вячеслав",
+      "phone": "https://www.avito.ru/vladivostok/remont_i_stroitelstvo/profnastil._proflist._s8s10_s21.tolschina_0.3-0.45_4751539686",
+      "source": null
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "ВейМат",
+      "phone": "+74751979452",
+      "source": "https://www.avito.ru/brands/veimat/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=4751979452&sellerId=7d8268efbdd37c988977ab81b6ebd6c1"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Фабрика Окон",
+      "phone": "+74232542232",
+      "source": "+74232542232"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "ТКС",
+      "phone": "+74232054490",
+      "source": "+74232054490"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Геометрия Уюта",
+      "phone": "+74232802101",
+      "source": "+74232802101"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "ЭнергоСфера",
+      "phone": "+74232060879",
+      "source": "+74232060879"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Сила Тока",
+      "phone": "+74232523252",
+      "source": "+74232523252"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Электрик ру",
+      "phone": "+79530581246",
+      "source": "+79530581246"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Камин Дом",
+      "phone": "+74232790414",
+      "source": "+74232790414"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Печи Онлайн",
+      "phone": "+78005052132",
+      "source": "+78005052132"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Печь Град",
+      "phone": "+74232397979",
+      "source": "+74232397979"
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Электрика",
+      "material": "Интек",
+      "category": "Электрика",
+      "name": "АВС-электро",
+      "phone": "+78005558859",
+      "source": "+78005558859"
+    },
+    {
+      "city": "Кемерово",
+      "region": "Кемерово",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Александр",
+      "phone": "+72807994322",
+      "source": "https://www.avito.ru/brands/555acd0a8ef315b004d51d396445788d/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=2807994322&item_type=str_trx&page_from=from_item_card&sellerId=2bae7e216cba1df3cc649e6111bde3a5"
+    },
+    {
+      "city": "Кемерово",
+      "region": "Кемерово",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "АлексСтрой",
+      "phone": "+77520685784",
+      "source": "https://www.avito.ru/user/80a57d1b23de8bea5c884820af907042/profile?id=7520685784&item_type=str_trx&src=item&page_from=from_item_card&iid=7520685784"
+    },
+    {
+      "city": "Кемерово",
+      "region": "Кемерово",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Денис",
+      "phone": "+73845959734",
+      "source": "https://www.avito.ru/user/6190a7e3c3f71759d278e374022abb02/profile?id=3845959734&item_type=str_trx&src=item&page_from=from_item_card&iid=3845959734"
+    },
+    {
+      "city": "Кемерово",
+      "region": "Кемерово",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Алексей",
+      "phone": "+77706000213",
+      "source": "https://www.avito.ru/brands/d5e11cea0eb6a604250ec845f2ffb568/all?gdlkerfdnwq=101&iid=7706000213&item_type=str_trx&page_from=from_item_card&sellerId=186a95722db392b13367b1fd4b97b31c"
+    },
+    {
+      "city": "Кемерово",
+      "region": "Кемерово",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "ISOPROF Алексей",
+      "phone": "+72236275117",
+      "source": "https://www.avito.ru/brands/i130430270/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=2236275117&item_type=str_trx&page_from=from_item_card&sellerId=35edc33e336d81e74d6e25fff2c30c85"
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Утепление",
+      "material": "Лариса Фанком/Сандор (мембраны)",
+      "category": "Обшивка стен",
+      "name": "Александр Алтай-Сервис",
+      "phone": "+78332711043",
+      "source": "+78332711043"
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Кровля",
+      "material": "Игорь (отлив)",
+      "category": "Обшивка кровли/стен",
+      "name": "Андрей (отлив)",
+      "phone": "+79091434188",
+      "source": "+79091434188"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "СТ (пиломатериал)",
+      "phone": "+74411386288",
+      "source": "https://www.avito.ru/brands/i101961725/all/remont_i_stroitelstvo?src=search_seller_info&iid=4411386288&sellerId=7ad987172f5753b103c357dcffb784a5"
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Винтфунд (винтовые)",
+      "phone": "+77418547111",
+      "source": "https://www.avito.ru/brands/i302115773/all?gdlkerfdnwq=101&shopId=2835144&page_from=from_item_card&iid=7418547111&sellerId=aa313fbaf4329550bbcd083f7911bb29"
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ОСК (буронабивные)",
+      "phone": "+77291731697",
+      "source": "https://www.avito.ru/brands/i214750654/all/predlozheniya_uslug?gdlkerfdnwq=101&page_from=from_item_card&iid=7291731697&sellerId=a5793cd32df2ca58b59dc51e83dd83ba"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "СтройДом",
+      "phone": "https://www.avito.ru/user/47df96b04072323b7fd5a7a34b75b86b/profile?src=sharing",
+      "source": null
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Ипполит",
+      "phone": "https://www.avito.ru/user/bb33715540107007e0a49cfc252d3a2c/profile?src=sharing",
+      "source": null
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Олег",
+      "phone": "+73046771757",
+      "source": "https://www.avito.ru/brands/i304500681/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=3046771757&sellerId=cb5a1ec567d4e4c48ec41163ee7d0c19"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Сергей",
+      "phone": "+74718324531",
+      "source": "https://www.avito.ru/brands/i19321456/all/remont_i_stroitelstvo?iid=4718324531&page_from=from_item_messenger&sellerId=e37c2738801743b1dd6ff004552e8e67"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Фундамент Прайм",
+      "phone": "+79200558822",
+      "source": "+79200558822"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Сваяж",
+      "phone": "+79101423208",
+      "source": "+79101423208"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Саксэс",
+      "phone": "+78312664217",
+      "source": "+78312664217"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Стройматериалы",
+      "phone": "+73622463316",
+      "source": "https://www.avito.ru/brands/i363022856/all?iid=3622463316&page_from=from_item_messenger&sellerId=043990879e2be149fd15d08f3d5d15f5"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Михаил",
+      "phone": "+77249877203",
+      "source": "https://www.avito.ru/brands/7c91a26a0f20c9c6b99962611135d599/all?gdlkerfdnwq=101&page_from=from_item_card&iid=7249877203&sellerId=af8635aab312ef138455d271c391ce66"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Александр",
+      "phone": "+72422059421",
+      "source": "https://www.avito.ru/brands/7e846deaff279e16f6e8029771e56f40/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=2422059421&sellerId=95a41049fefc2fc3aad73ef18a655419"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Влад",
+      "phone": "+71467075639",
+      "source": "https://www.avito.ru/brands/i143542404?iid=1467075639&page_from=from_item_messenger"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "СпецДобор",
+      "phone": "+73423852805",
+      "source": "https://www.avito.ru/brands/i3656514/all?gdlkerfdnwq=101&shopId=109167&page_from=from_item_card&iid=3423852805&sellerId=b57de595fa143d6b1ce632079c0d62b3"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Завод окон ПВХ",
+      "phone": "+78312351237",
+      "source": "+78312351237"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Призма",
+      "phone": "+78312158888",
+      "source": "+78312158888"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Петрович",
+      "phone": "+78312667046",
+      "source": "+78312667046"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Светодом",
+      "phone": "+78312613020",
+      "source": "+78312613020"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Электрон",
+      "phone": "+78005505250",
+      "source": "+78005505250"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Печной дом",
+      "phone": "+78129480681",
+      "source": "+78129480681"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Ogner.ru",
+      "phone": "+78123094996",
+      "source": "+78123094996"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Город печей",
+      "phone": "+78312310268",
+      "source": "+78312310268"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Народный камин",
+      "phone": "+78126058505",
+      "source": "+78126058505"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Фундамент",
+      "material": "Первый фундамент",
+      "category": "Фундамент",
+      "name": "Руслан",
+      "phone": "+72171998095",
+      "source": "https://www.avito.ru/user/cdf246966595d7d8d0af2bcaf74bc3eb/profile?id=2171998095&src=item&page_from=from_item_card&iid=2171998095"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Фундамент",
+      "material": "Первый фундамент",
+      "category": "Фундамент",
+      "name": "База свай",
+      "phone": "+72176936386",
+      "source": "https://www.avito.ru/brands/i181008035/all/remont_i_stroitelstvo?iid=2176936386&page_from=from_item_messenger&sellerId=ba4634bf5cd60f47aec284c41021ee7c"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Фундамент",
+      "material": "Первый фундамент",
+      "category": "Фундамент",
+      "name": "Владимир",
+      "phone": "+77639471332",
+      "source": "https://www.avito.ru/user/f613aab7b2c7cd6861d71ba25cbd46b5/profile?iid=7639471332&page_from=from_item_messenger&src=messenger&id=7639471332"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Электрика",
+      "material": "Всё для электромонтажа",
+      "category": "Электрика",
+      "name": "Максим (кабель)",
+      "phone": "+72803749356",
+      "source": "https://www.avito.ru/brands/i166366549/all/dlya_doma_i_dachi?iid=2803749356&page_from=from_item_messenger&sellerId=58dd2392c7a691bef57ff17aa3f25737"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Электрика",
+      "material": "Всё для электромонтажа",
+      "category": "Электрика",
+      "name": "Кабель",
+      "phone": "+71091232999",
+      "source": "https://www.avito.ru/user/fec830ecf2068760251414bcdfdcc383/profile?iid=1091232999&page_from=from_item_messenger&src=messenger&id=1091232999"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Электрика",
+      "material": "Всё для электромонтажа",
+      "category": "Электрика",
+      "name": "Дмитрий (кабель)",
+      "phone": "+77607670550",
+      "source": "https://www.avito.ru/brands/bbab59074e1d2471821e373507be468f/all?iid=7607670550&page_from=from_item_messenger&sellerId=116d2755614f82f6a42325c6e9faef90"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Дмитрий (утеплитель)",
+      "phone": "+72871891365",
+      "source": "https://www.avito.ru/brands/i17160602/all/remont_i_stroitelstvo?src=search_seller_info&iid=2871891365&sellerId=21b63a6bd8e64640cc36747c3cbd27f4"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Сергей (утеплитель)",
+      "phone": "+74600941515",
+      "source": "https://www.avito.ru/brands/i84946875/all?src=search_seller_info&iid=4600941515&sellerId=764b89608201d686ec9c2fa3aca2a81b"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Римма (утеплитель)",
+      "phone": "+77817337893",
+      "source": "https://www.avito.ru/brands/ecfdff4269a8defd8621226b1c554ede/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=7817337893&item_type=str_trx&page_from=from_item_card&sellerId=a71c765a724bf64aa3bfa1d60e5d7f6c"
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Фундамент",
+      "material": "Фундамент",
+      "category": "Винтовые сваи",
+      "name": "Спецтранс56",
+      "phone": "+71184735759",
+      "source": "https://www.avito.ru/brands/i157631591?gdlkerfdnwq=101&page_from=from_item_header&iid=1184735759&page_from=from_item_card&iid=1184735759"
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Фундамент",
+      "material": "Фундамент",
+      "category": "Винтовые сваи",
+      "name": "БЗВС (Барнаульский Завод Винтовых Свай)",
+      "phone": "+77486710495",
+      "source": "https://www.avito.ru/brands/23f49635331908271f7d7a677d7059b8/all/remont_i_stroitelstvo?src=search_seller_info&iid=7486710495&sellerId=199ab2eb1f94923e8e50cf0941cecebd"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ИП Сваи Монтаж",
+      "phone": "+77712000612",
+      "source": "https://www.avito.ru/brands/49bf397cff531cb94b15139186c2a1a5/all?gdlkerfdnwq=101&iid=7712000612&item_type=str_trx&page_from=from_item_card&sellerId=24383a91e94ea698a82bedc403ccf86f"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Алексей",
+      "phone": "+71655302521",
+      "source": "https://www.avito.ru/brands/i97477153/all?gdlkerfdnwq=101&iid=1655302521&item_type=str_trx&page_from=from_item_card&sellerId=39e66fa2a0cae7a9d3fb459761e54dd9"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Валерий, ЖБИ",
+      "phone": "+71874492153",
+      "source": "https://www.avito.ru/brands/84f4f9d1458deaffe3647cda9a6e6de0/all?gdlkerfdnwq=101&iid=1874492153&item_type=str_trx&page_from=from_item_card&sellerId=665b80db24545755aef5f11f01d6200d"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Александр, ЖБИ",
+      "phone": "+77247833907",
+      "source": "https://www.avito.ru/brands/72f7c4ac3b4b5ed5288c4f49cb3505ba/all/predlozheniya_uslug?gdlkerfdnwq=101&iid=7247833907&item_type=str_trx&page_from=from_item_card&sellerId=1c8b7faee82dacb02ab93e1dfbefca07"
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Лесосклад",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Георгий (Шоссейная 103)",
+      "phone": "https://www.avito.ru/brands/i49111519/all?iid=901325782&page_from=from_item_messenger&sellerId=911f5b0c9b560c5d51419915b836ab55",
+      "source": null
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Фундамент",
+      "material": "ООО Каркасные дома (сваи)",
+      "category": "Фундамент",
+      "name": "ДмитрийСтрой",
+      "phone": "+77500515920",
+      "source": "https://www.avito.ru/brands/40439261e036de5516086deef430fe87/all/predlozheniya_uslug?gdlkerfdnwq=101&shopId=7426701&page_from=from_item_card&iid=7500515920&sellerId=efbe5879a0d535a27d2dc6f80a5b5983"
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Утепление",
+      "material": "Аквист",
+      "category": "Обшивка стен",
+      "name": "ТД Народный партнер",
+      "phone": "https://www.avito.ru/brands/i148940546/all?ysclid=med3w87251285746142&sellerId=adf2e9e7d6d0288466598c79b5941814",
+      "source": null
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Банная печь",
+      "material": "Всё для бани (​Пр.Шогенцукова, 34в)",
+      "category": "Печной комплект",
+      "name": "Печи Гарант (Интернет магазин. Доставка бесплатная)",
+      "phone": "+77583582671",
+      "source": "https://www.avito.ru/brands/i177011458/all/remont_i_stroitelstvo?iid=7583582671&page_from=from_item_messenger&sellerId=e31e18aba13296767e3e6066cb2b4493"
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Банная печь",
+      "material": "Всё для бани (​Пр.Шогенцукова, 34в)",
+      "category": "Печной комплект",
+      "name": "РОССПЕЧИ (Интернет магазин. Отгрузка в г. Kоpенoвск на тeрминaл ПЭК ул. Eгoршинa, 6, cтр. 1)",
+      "phone": "+74070100743",
+      "source": "https://www.avito.ru/brands/i83070984/all/dlya_doma_i_dachi?gdlkerfdnwq=101&page_from=from_item_card&iid=4070100743&sellerId=f5786c19aa23a3a5903bfbe6f7521553"
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ГлавФундамент - винтовые сваи в Ростове-на-Дону",
+      "phone": "+78632565145",
+      "source": "+78632565145"
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Даромстрой (мембрана)",
+      "phone": "+79171626863",
+      "source": "+79171626863"
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Кровля",
+      "material": "Металл Профиль",
+      "category": "Обшивка кровли/стен",
+      "name": "Ринат откосы",
+      "phone": "https://www.avito.ru/user/4a0fe5348ac445b47e21e31132293464/profile?src=search_seller_info",
+      "source": null
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Кровля",
+      "material": "Металл Профиль",
+      "category": "Обшивка кровли/стен",
+      "name": "откосы СКК",
+      "phone": "https://www.avito.ru/brands/6f93bb760aef7e4416d9e65d85447c8c/all?src=search_seller_info&sellerId=9f4298d388cd65bdc1f628473a9c3126",
+      "source": null
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Пиломатериал",
+      "phone": "+79013503900",
+      "source": "+79013503900"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ЭкоЛес",
+      "phone": "+78129984432",
+      "source": "+78129984432"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ВЛБ",
+      "phone": "+78123465335",
+      "source": "+78123465335"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Раздолье",
+      "phone": "+74724325796",
+      "source": "https://www.avito.ru/brands/i315554134/all/remont_i_stroitelstvo?gdlkerfdnwq=101&shopId=3474864&page_from=from_item_card&iid=4724325796&sellerId=696b4cd98c15bd43f20270ec97ccd03f"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Павел",
+      "phone": "+79118394268",
+      "source": "+79118394268"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Сваи Сервис",
+      "phone": "+79315968126",
+      "source": "+79315968126"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ЛенСвая",
+      "phone": "+78129261623",
+      "source": "+78129261623"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Утепление",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "БуСтрой Маркет",
+      "phone": "+78126482474",
+      "source": "+78126482474"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Утепление",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Мембраны",
+      "phone": "+79112863949",
+      "source": "+79112863949"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Утепление",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ПроСтройка",
+      "phone": "+79214454280",
+      "source": "+79214454280"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Утепление",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Roof Top",
+      "phone": "+79046410202",
+      "source": "+79046410202"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "ПК Профиль",
+      "phone": "+78123317713",
+      "source": "+78123317713"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Мембраны",
+      "phone": "+79112863949",
+      "source": "+79112863949"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Жестянщик",
+      "phone": "+79313148942",
+      "source": "+79313148942"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "name": "Element Сталь",
+      "phone": "+77308853295",
+      "source": "https://www.avito.ru/brands/i51963695/all?iid=7308853295&page_from=from_item_messenger&sellerId=acf2377a626b6cde0553275f9d7f7752"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Окна Контакт",
+      "phone": "+78123324200",
+      "source": "+78123324200"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Теплый Север",
+      "phone": "+78129216799",
+      "source": "+78129216799"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Чюдо окна",
+      "phone": "+79218834738",
+      "source": "+79218834738"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Лемана Про",
+      "phone": "+78007000099",
+      "source": "+78007000099"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Сергей",
+      "phone": "+79219406587",
+      "source": "+79219406587"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Олег",
+      "phone": "+79216572326",
+      "source": "+79216572326"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Деревянные окна",
+      "phone": "+73985122510",
+      "source": "https://www.avito.ru/brands/51b1d3d24511f08460aa4e3f7178ec4a/all/remont_i_stroitelstvo?iid=3985122510&page_from=from_item_messenger&sellerId=cac61b3055fc262478e3e6aa075d1ee1"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Legno Okna",
+      "phone": "+74761702435",
+      "source": "https://www.avito.ru/brands/i276273436/all/remont_i_stroitelstvo?iid=4761702435&page_from=from_item_messenger&sellerId=522d9170577492816b9d6976cdd612a4"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "name": "Дмитрий",
+      "phone": "+71449440310",
+      "source": "https://www.avito.ru/user/01cf34398410f2df50a874a28c8fb1a2/profile?iid=1449440310&page_from=from_item_messenger&src=messenger&id=1449440310"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Петрович",
+      "phone": "+78123348888",
+      "source": "+78123348888"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Стройхозторг",
+      "phone": "+79313941000",
+      "source": "+79313941000"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "name": "Артелия",
+      "phone": "+78124488181",
+      "source": "+78124488181"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Ogner.ru",
+      "phone": "+78123094996",
+      "source": "+78123094996"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Народный камин",
+      "phone": "+78126058505",
+      "source": "+78126058505"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Константин",
+      "phone": "+79225282707",
+      "source": "+79225282707"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Banniki",
+      "phone": "+79222224223",
+      "source": "+79222224223"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Чан №1",
+      "phone": "+79999843631",
+      "source": "+79999843631"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Артем",
+      "phone": "+79666664640",
+      "source": "+79666664640"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "DOBROTERM",
+      "phone": "+73512258975",
+      "source": "+73512258975"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Мир чанов",
+      "phone": "+79020948975",
+      "source": "+79020948975"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Роман",
+      "phone": "+79112926067",
+      "source": "+79112926067"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "name": "Легенда Урала",
+      "phone": "+79085772797",
+      "source": "+79085772797"
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Печь",
+      "material": "ParOk71 (пиломатериал для бани)",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Нина (пиломатериал)",
+      "phone": "https://www.avito.ru/user/23f2a5e3695df77a7739e8632ee83b0b/profile?src=search_seller_info",
+      "source": null
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Утепление",
+      "material": "Крыши Саратов (утеплитель)",
+      "category": "Фундамент",
+      "name": "ТК Астера (мембрана)",
+      "phone": "+79372203173",
+      "source": "+79372203173"
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Фундамент",
+      "material": "Сергей",
+      "category": "Фундамент",
+      "name": "ГлавФундамент",
+      "phone": "+78619441192",
+      "source": "+78619441192"
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Фундамент",
+      "material": "Давенталь",
+      "category": "Фундамент",
+      "name": "Руслан",
+      "phone": "+77615872193",
+      "source": "https://www.avito.ru/brands/i307614146/all?src=search_seller_info&iid=7615872193&sellerId=4fa7eff707bc02222cf736aeaf60e366"
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Кровля",
+      "material": "Металл Профиль",
+      "category": "Обшивка кровли/стен",
+      "name": "Всё для кровли и фасада",
+      "phone": "+79197306831",
+      "source": "+79197306831"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Банная печь",
+      "material": "Строительный мир (брусок)",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Пиломатериалы Сыктывкар",
+      "phone": "+77517556800",
+      "source": "https://www.avito.ru/brands/i75248032/all?iid=7517556800&page_from=from_item_messenger&sellerId=8a95194500a4b078f17f279ac9ef40c4"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Банная печь",
+      "material": "Строительный мир (брусок)",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Пиломатериал",
+      "phone": "https://www.avito.ru/brands/37d87920dcad1750c1199ca6b88f2e36/all/remont_i_stroitelstvo?iid=779799653&page_from=from_item_messenger&sellerId=407d8c156f2acbd5fb58b7bf7335891e",
+      "source": null
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Банная печь",
+      "material": "Строительный мир (брусок)",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Ефим (ОСП)",
+      "phone": "+74138557880",
+      "source": "https://www.avito.ru/brands/i166454316/all?gdlkerfdnwq=101&page_from=from_item_card&iid=4138557880&sellerId=52c8ebcdcb8586a56108e60173081d3b"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Павел",
+      "phone": "+72137846602",
+      "source": "https://www.avito.ru/brands/i37803803/all?gdlkerfdnwq=101&page_from=from_item_card&iid=2137846602&sellerId=6562ae1b7d4da8800495bc7ad61b26de"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Сила",
+      "phone": "+71911044071",
+      "source": "https://www.avito.ru/brands/i94571353/all?iid=1911044071&page_from=from_item_messenger&sellerId=bc962d011f56cc94de670a177c20c84c"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Александр",
+      "phone": "+72281530989",
+      "source": "https://www.avito.ru/brands/a757d6a61fbac6b75b3657e8965215da/all/remont_i_stroitelstvo?gdlkerfdnwq=101&page_from=from_item_card&iid=2281530989&sellerId=f166ddcbadcbcf865b5161e07c732653"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ООО «ПРОФИЛЬ»",
+      "phone": "+71821636578",
+      "source": "https://www.avito.ru/brands/i71415167/all?iid=1821636578&page_from=from_item_messenger&sellerId=dfb707067828c79ebc6059052de7aa2f"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Василий",
+      "phone": "+74442116347",
+      "source": "https://www.avito.ru/brands/937f844670da9f81cf98f7c8e5b13e37/all?iid=4442116347&page_from=from_item_messenger&sellerId=2afc5917b34d58ee7a4f6af65383b738"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Электрика",
+      "material": "РесурсЭнергоСнаб",
+      "category": "Электрика",
+      "name": "Руслан (ВВГнг)",
+      "phone": "https://www.avito.ru/brands/i60911659/all/dlya_doma_i_dachi?src=search_seller_info&sellerId=3dbf5600578e6f0cbc2c566a98efc910",
+      "source": null
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Электрика",
+      "material": "РесурсЭнергоСнаб",
+      "category": "Электрика",
+      "name": "Частник (ВВГнг)",
+      "phone": "https://www.avito.ru/brands/15a601f3b9503acead45e2d6bf221394/items/all?s=profile_search_show_all&sellerId=931758666c600079ac737652f3fb5162",
+      "source": null
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Тюменская Пилорама",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Денис",
+      "phone": "+77347954944",
+      "source": "https://www.avito.ru/brands/i134963350/all?src=search_seller_info&iid=7347954944&sellerId=821e724bcf00bf6d1b4fc09e8137ec52"
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Тюменская Пилорама",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Сергей",
+      "phone": "+71878449828",
+      "source": "https://www.avito.ru/brands/i60788792?gdlkerfdnwq=101&page_from=from_item_header&iid=1878449828&page_from=from_item_card&iid=1878449828"
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "ФундаментСтройКонтроль",
+      "category": "Фундамент",
+      "name": "Иван",
+      "phone": "+74063407385",
+      "source": "https://www.avito.ru/brands/8e98e25135e444adeab69e40e11242ba/all?gdlkerfdnwq=101&page_from=from_item_card&iid=4063407385&sellerId=516effba353f8fdee1c8d12191251117"
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "ФундаментСтройКонтроль",
+      "category": "Фундамент",
+      "name": "Сергей",
+      "phone": "+73580260900",
+      "source": "https://www.avito.ru/brands/i89970206/all?src=search_seller_info&iid=3580260900&sellerId=40ad4332beee022003e41067357d0675"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Пиломатериалы",
+      "phone": "+72512250771",
+      "source": "https://www.avito.ru/user/5b7fbe73c524055f16c13a20616a17da/profile?id=2512250771&item_type=str_trx&src=item&page_from=from_item_card&iid=2512250771"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Пиломатериалы",
+      "phone": "+77786563230",
+      "source": "https://www.avito.ru/brands/36f4b9f42ca5b307573329587ed4b00e/all?src=search_seller_info&iid=7786563230&sellerId=36f4b9f42ca5b307573329587ed4b00e"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "Мовсар (пиломатериал)",
+      "phone": "+77660557620",
+      "source": "https://www.avito.ru/brands/88e5df351bb8258146d21df4a42262bb/all?src=search_seller_info&iid=7660557620&sellerId=bd0fd227b86091e561449f6cfadc3226"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "ЭкоДом (пиломатериал)",
+      "phone": "+77692269568",
+      "source": "https://www.avito.ru/brands/c6337031003cb9f67991dbe9edd26676/all/remont_i_stroitelstvo?src=search_seller_info&iid=7692269568&sellerId=b67f2e91fc49ff158ea45f2453be42e0"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "name": "АСК (фанера, брусок)",
+      "phone": "+74046041511",
+      "source": "https://www.avito.ru/user/a26c8b175d41e2d6f6f7a86823a7d2b1/profile?src=search_seller_info&iid=4046041511"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Винтфундамент",
+      "phone": "+77674013270",
+      "source": "https://www.avito.ru/brands/i302115773/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=7674013270&item_type=str_trx&page_from=from_item_card&sellerId=48927af516872ef4e31d44b95adfc70c"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "Лайтфундамент",
+      "phone": "+72983182692",
+      "source": "https://www.avito.ru/brands/lightfundament2014/all/remont_i_stroitelstvo?gdlkerfdnwq=101&iid=2983182692&item_type=str_trx&page_from=from_item_card&sellerId=d3d11272209cd82fd1b0798742c85f16"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "name": "ЖБИ",
+      "phone": "+73574350405",
+      "source": "https://www.avito.ru/user/657c762642a25de83905fad01b24000c/profile?id=3574350405&item_type=str_trx&src=item&page_from=from_item_card&iid=3574350405"
+    },
+    {
+      "city": "Респ",
+      "region": "Чеченская Респ",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "name": "Уминеральная вата (утеплитель)",
+      "phone": "+77679033159",
+      "source": "https://www.avito.ru/brands/6494fc37b94309485c46efe66ead1307/all/remont_i_stroitelstvo?src=search_seller_info&iid=7679033159&sellerId=dd00aee6a10aa812279a353c2c258bbd"
+    },
+    {
+      "city": "Южно-Сахалинск",
+      "region": "Южно-Сахалинск",
+      "section": "Банная печь",
+      "material": "ПЕЧЬГРАД",
+      "category": "Печной комплект",
+      "name": "Пленка Finkа Рrеmium Рlus 150, Полурукав с отступом 20 см ПВД 1600 мм, 200мкм 12 590₽",
+      "phone": "+79643899006",
+      "source": "+79643899006"
+    }
+  ],
+  "products": [
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 145х40х6000 (сорт 1) = 122 шт",
+      "price": "7.058м3 пиломатериал - 125.600₽\nСушка 5000₽/куб = 35.000₽\nСтрогание 3200₽/куб= 22.400₽\nИтого: доска сухая строганная , весь объем обойдется в 183.000₽(7.058м3)"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "7300 руб/шт"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1350 руб/уп"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка крыши/стен",
+      "product": "Профлист С21 толщина 0,4-0,5 серый графит",
+      "price": "700 руб/м2"
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая двухкамерный стеклопакет",
+      "price": "17930 руб."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Алтайский край",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "150 руб/п.м."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Электрика",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "1512 руб/шт."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "6900 руб/шт."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1150-1609 руб/уп"
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор)",
+      "price": "580 руб/кв.м."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "ПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетый. 1000×1000мм.=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Угловые 1700×1000мм=1 шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Безстворки. 1700×1900мм=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетый.и500×800 мм=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетые. 800×1900 мм=1шт",
+      "price": "95 150-127 600 руб."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "7500 руб/шт."
+    },
+    {
+      "city": "Анапа",
+      "region": "Анапа и Краснодарский край",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печь на 80 кг камней (заводская), топка минимум 6мм\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 36 900-45 000 руб."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40х146х3000 (сорт 1)",
+      "price": "420 руб."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "6200-6500 руб/шт."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1350-1565 руб/уп."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка крыши/стен",
+      "product": "Профлист С21 толщина 0,4-0,5 серый графит",
+      "price": "700-850 руб/кв.м."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "ПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетый. 1000×1000мм.=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Угловые 1700×1000мм=1 шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Безстворки. 1700×1900мм=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетый.и500×800 мм=1шт\nПВХ 200х80см, с ламинацией 70 профиль, 2х камерные. Одностворчетые. 800×1900 мм=1шт",
+      "price": "115 550-147 200 руб."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "117 руб/п.м."
+    },
+    {
+      "city": "Барнаул",
+      "region": "Барнаул",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печи круглые с простым баком и чугунным колосником, в комплекте, от 15500руб., с нержавеющим от 21000руб.\nПечи листовые от 12500руб. с баком и чугунным колосником в комплекте, с нерж.баком от 20500руб.\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 36 900-45 700 руб."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 46х140х6000",
+      "price": "1 470 руб/шт."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Винтовые сваи d=89, l=2,5, оголовок 200",
+      "price": "5 208 - 6 491 руб/шт."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Эковер Лайт 45 пл-ть 50мм",
+      "price": "1 290 руб/уп."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил  Н2030",
+      "price": "456 руб/кв.м."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "91 850 - 125 730 руб."
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": "50 руб/м"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Сантехника",
+      "material": "Комплектующие",
+      "category": "Сантехника",
+      "product": "8 (917) 791-67-79",
+      "price": "Мастер Сантехник, ул. Мубарякова, 10/1"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Крепеж",
+      "material": "Комплектующие",
+      "category": "Крепеж",
+      "product": "8 (3476) 32-01-87",
+      "price": "Магазин центр крепежа, ул. Нуриманова, 16А, Салават"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Баня",
+      "material": "Комплектующие",
+      "category": "Печной комплект",
+      "product": "8 (800) 500-47-13",
+      "price": "Лайф, ул. 8 Марта, 34"
+    },
+    {
+      "city": "Уфа",
+      "region": "Башкирия",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Печной комплект",
+      "product": "8 (917) 481‑54‑04",
+      "price": "Андрей, Кран 3 т, Борт 5т."
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "84722777131",
+      "price": "Технодрев"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "89524340995",
+      "price": "БелСваи 31"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "84722418066",
+      "price": "БелСнаб"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "84722207210",
+      "price": "Жестянщик"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "84722313711",
+      "price": "Новые окна"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "84722550441",
+      "price": "Эдисон"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Товары для бани",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "84722904999",
+      "price": "Строй Маркет"
+    },
+    {
+      "city": "Белгород",
+      "region": "Белгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Печной комплект",
+      "product": "89056727145",
+      "price": "Аренда спецтехники"
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x150x6000 (сорт 1)",
+      "price": "1287 руб/шт."
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5500-6200 руб/шт."
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1040-1270 руб/уп."
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,4 мм (цвет на выбор)  Лист 2м",
+      "price": "1270 руб/лист."
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "105 300-130 750 руб."
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "80 руб/пог.м.или 7500-8000 руб./катушка"
+    },
+    {
+      "city": "Брянск",
+      "region": "Брянск",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 42 550-47 300 руб."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x150x6000 (сорт 1)",
+      "price": "1008 руб/шт."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "8800 руб/шт."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1220 руб/уп."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С10 0,4 мм (цвет на выбор)",
+      "price": "450 руб/п.м."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая однокамерный стеклопакет",
+      "price": "19035 руб"
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "113 руб/м."
+    },
+    {
+      "city": "Владивосток",
+      "region": "Владивосток",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печь на 80 кг камней (заводская), топка минимум 6мм\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 36200руб."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "25000 руб/м3"
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5350-6000 руб."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Изолайт Л (пл-ть 40) 50*600*1000 (4,8 м2) - 1000 руб/уп",
+      "price": "1000 руб."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор) Лист 2м",
+      "price": "1463 руб."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\"",
+      "price": "83500-120750 руб."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "77 руб/м."
+    },
+    {
+      "city": "Воронеж",
+      "region": "Воронеж",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 35550-40000 руб."
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 45x145x6000 (сорт 1)",
+      "price": "1873 руб/шт."
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "7500 руб/шт"
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "720-1250 руб/уп."
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка крыши/стен",
+      "product": "Профлист С21 толщина 0,45 серый графит",
+      "price": "635-859 руб/м2"
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "97 800-124 300 руб."
+    },
+    {
+      "city": "Елец",
+      "region": "Елец",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "105 руб/м."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Электрика",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "26000 руб."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5300 руб/шт."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "950-1200 руб."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор)",
+      "price": "563-670 руб/м2."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nГлухое окно ПВХ 1700х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. Стоимость с импостом и без. 1 шт.",
+      "price": "124 300 руб."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "92 руб/м."
+    },
+    {
+      "city": "Иркутск",
+      "region": "Иркутск",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печь на 80 кг камней (заводская), топка минимум 6мм\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 37450 руб."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 50х150",
+      "price": "837 руб/шт."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5'460-6'000 руб/шт."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1'130 руб/уп."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,4 мм (цвет на выбор)  Лист 2м",
+      "price": "1'120 руб/лист"
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nГлухое окно ПВХ 1700х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. Стоимость с импостом и без. 1 шт.",
+      "price": "107'550-141'355 руб."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "7'500 руб."
+    },
+    {
+      "city": "Казань",
+      "region": "Казань",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": ""
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "26000 руб/куб."
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "8500 руб/шт"
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1250-1432 руб/уп."
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка крыши/стен",
+      "product": "Профлист С21 толщина 0,45 серый графит",
+      "price": "640-859 руб/м2"
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая двухкамерный стеклопакет",
+      "price": "18677 руб."
+    },
+    {
+      "city": "обл",
+      "region": "Кемеровская обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "187 руб/п.м."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Электрика",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40х100х3000 (сорт 1)",
+      "price": "140 руб/п.м."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4200-5300 руб/шт."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Плита минеральная Технониколь Роклайт 35 пл-ть 50мм",
+      "price": "1'100 руб."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 RAL 7024",
+      "price": "495-590 руб/кв.м."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "105'400 - 139'650 руб."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "75 руб/пог.м."
+    },
+    {
+      "city": "Киров",
+      "region": "Киров",
+      "section": "Банная печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 37'550-45'000 руб."
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска строганая калиброванная 45х145х4000мм",
+      "price": "1 044 руб"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "8 (913) 031-31-31",
+      "price": "Сухойлес.рф, просп. имени Газеты Красноярский Рабочий, 30А, стр. 11"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Фундамент",
+      "material": "Винтовые сваи",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "6200"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Фундамент",
+      "material": "Винтовые сваи",
+      "category": "Фундамент",
+      "product": "8 (923) 354-12-77",
+      "price": "Свай Фундамент"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Технониколь Роклайт (пл-ть 35) 50 мм",
+      "price": "690 руб"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "8 (800) 101-99-59",
+      "price": "Сибирский бизнес, Северное ш., 31"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С20",
+      "price": "400-540 руб/кв.м"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "8 (391) 988-94-85",
+      "price": "Металл Профиль Красноярск, Башиловская ул., 1А"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "87 960 - 109 500 руб."
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "8 (902) 924-82-43",
+      "price": "СибОкна, Норильская ул., 16, стр. 1"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": "45-50 руб/м"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Сантехника",
+      "material": "Комплектующие",
+      "category": "Сантехника",
+      "product": "8 (950) 404-07-19",
+      "price": "Сибсантехсервис, ул. Калинина, 96А"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Крепеж",
+      "material": "Комплектующие",
+      "category": "Крепеж",
+      "product": "8 (923) 306-05-15",
+      "price": "Метиз-центр, ул. Петра Подзолкова, 4"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Баня",
+      "material": "Комплектующие",
+      "category": "Печной комплект",
+      "product": "8 (961) 770-80-79",
+      "price": "Печной эксперт, ул. Калинина, 98И"
+    },
+    {
+      "city": "Красноярск",
+      "region": "Красноярск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Грузоперевозки",
+      "product": "8 983 265‑28‑28",
+      "price": "Грузоперевозки"
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 45x145x6000 (сорт 1)",
+      "price": "1873 руб/шт."
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "7500 руб/шт"
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "720-1250 руб/уп."
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка крыши/стен",
+      "product": "Профлист С21 толщина 0,45 серый графит",
+      "price": "635-859 руб/м2"
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая двухкамерный стеклопакет",
+      "price": "18677 руб."
+    },
+    {
+      "city": "Липецк",
+      "region": "Липецк",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "105 руб/м."
+    },
+    {
+      "city": "Марий-Эл",
+      "region": "Марий-Эл",
+      "section": "Электрика",
+      "material": "ЭТМ",
+      "category": "Электрика",
+      "product": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2",
+      "price": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2"
+    },
+    {
+      "city": "Марий-Эл",
+      "region": "Марий-Эл",
+      "section": "Утепление",
+      "material": "ЭТМ",
+      "category": "Электрика",
+      "product": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2",
+      "price": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2"
+    },
+    {
+      "city": "Марий-Эл",
+      "region": "Марий-Эл",
+      "section": "Кровля",
+      "material": "ЭТМ",
+      "category": "Электрика",
+      "product": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2",
+      "price": "1)  руб/м3\n2)  руб/м3\n3)  руб/шт.\n4)  руб/шт.\n5)  руб/м2"
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "89882910014",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "https://www.avito.ru/user/618c113ebdce23636b76ae69067ccdf5/profile?id=2934557608&src=item&page_from=from_item_card&iid=2934557608",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "89887777222",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "89890500020",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Окна/Двери",
+      "material": "Окна/Двери",
+      "category": "ПВХ",
+      "product": "89604197086",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "88722666668",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Товары для бани",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "88007750307",
+      "price": ""
+    },
+    {
+      "city": "Махачкала",
+      "region": "Махачкала",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "89166058126",
+      "price": ""
+    },
+    {
+      "city": "Москва",
+      "region": "Москва и Обл",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Компания по аренде эвакуатора-манипулятора",
+      "category": "Печной комплект",
+      "product": "1) 28500 руб/м3\n2) 18600 руб/м3\n3) 180 руб/шт.\n4) 111 руб/шт.\n5) 720 руб/м2",
+      "price": "1) 31550 руб/м3\n2) 19000 руб/м3\n3) 240 руб/шт\n4) 124 руб/шт.\n5) 800 руб/м2"
+    },
+    {
+      "city": "Москва",
+      "region": "Москва и Обл",
+      "section": "Фундамент",
+      "material": "Компания по аренде эвакуатора-манипулятора",
+      "category": "Печной комплект",
+      "product": "7500 руб/шт.",
+      "price": "8650 руб/шт."
+    },
+    {
+      "city": "Москва",
+      "region": "Москва и Обл",
+      "section": "Утепление",
+      "material": "Компания по аренде эвакуатора-манипулятора",
+      "category": "Печной комплект",
+      "product": "1) 1115 руб/уп.\n2) 2751 руб/шт.\n3) 4021 руб/шт.\n4) 4590 руб/шт.\n5) 750 руб/шт.",
+      "price": "1) 1310 руб/уп.\n2) 3100 руб/шт.\n3) 5076 руб/шт.\n4) 5808 руб/шт.\n5) 867 руб/шт."
+    },
+    {
+      "city": "Москва",
+      "region": "Москва и Обл",
+      "section": "Кровля",
+      "material": "Компания по аренде эвакуатора-манипулятора",
+      "category": "Печной комплект",
+      "product": "1) 18300 руб.\n2) 35200 руб.\n3) 13100 руб.\n4) 12750 руб.\n5) 14700 руб.",
+      "price": "1) 20650 руб.\n2)  37000 руб.\n3) 14044 руб.\n4) 13250 руб.\n5) 15265 руб."
+    },
+    {
+      "city": "Москва",
+      "region": "Москва и Обл",
+      "section": "Печь",
+      "material": "Компания по аренде эвакуатора-манипулятора",
+      "category": "Печной комплект",
+      "product": "35400 руб/комплект",
+      "price": "38700 руб/комплект"
+    },
+    {
+      "city": "Н.Челны",
+      "region": "Н.Челны",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "8 (904) 679-71-40",
+      "price": "Квадрометр, Казанский просп., 234А, стр. 26"
+    },
+    {
+      "city": "Н.Челны",
+      "region": "Н.Челны",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "8 (927) 429-00-00",
+      "price": "Сваи+"
+    },
+    {
+      "city": "Н.Челны",
+      "region": "Н.Челны",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "8 (800) 511-97-01",
+      "price": "Технониколь, Казанский просп., 163"
+    },
+    {
+      "city": "Н.Челны",
+      "region": "Н.Челны",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "8 (8552) 91-68-49",
+      "price": "Металл Профиль, Промышленная ул., 72/23"
+    },
+    {
+      "city": "Н.Челны",
+      "region": "Н.Челны",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "8 (8552) 36-69-22",
+      "price": "Мир ремонта, просп. Мира, 49А"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "до 1300 руб/шт."
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "6700 руб/шт."
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "870 руб/уп."
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор) Лист 2,75м",
+      "price": "1725 руб/лист"
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая однокамерный стеклопакет",
+      "price": "16000 руб."
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "9445 руб/шт."
+    },
+    {
+      "city": "Новгород",
+      "region": "Нижний Новгород",
+      "section": "Банная печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печь на 80 кг камней (заводская), топка минимум 6мм\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 33600"
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 20x140x3000/4000 (сорт 1)",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "ТЕХНОПЛЕКС XPS утеплитель ИЗОБОКС 1180×580 50мм",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор)",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": ""
+    },
+    {
+      "city": "Новосибирск",
+      "region": "Новосибирск",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": ""
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "8 (3812) 40-47-48",
+      "price": "Большой Дом Древесины, ул. 22 Декабря, 86"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "8 (904) 328-88-36",
+      "price": "Сергей"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "8 (800) 600-08-85",
+      "price": "Технониколь Торговая Сеть, Барнаульский пер., 6, посёлок Амурский"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "8 (3812) 99-92-22",
+      "price": "Омск Сайдинг Инвест, 3-я Молодёжная ул., 18/5"
+    },
+    {
+      "city": "Омск",
+      "region": "Омск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "8 (3812) 53-99-99",
+      "price": "Омские Жалюзи Окна, просп. Карла Маркса, 17"
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Каркас домов и дорогих бань",
+      "category": "Пиломатериал",
+      "product": "83532965915",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Фундамент",
+      "material": "Фундамент",
+      "category": "Винтовые сваи",
+      "product": "89619205924",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Утепление",
+      "material": "Утепление стен",
+      "category": "Утеплитель, мембраны",
+      "product": "88006000995",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Кровля",
+      "material": "Обшивка кровли/стен",
+      "category": "Профнастил, обклады",
+      "product": "89228862702",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Окна/Двери",
+      "material": "Окна/Двери",
+      "category": "ПВХ/дерево",
+      "product": "89226259952",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика/метизы",
+      "product": "83532683115",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Товары для бани",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "89397090707",
+      "price": ""
+    },
+    {
+      "city": "Оренбург",
+      "region": "Оренбург",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Доставка материала",
+      "category": "Грузоперевозки",
+      "product": "83532901111",
+      "price": ""
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x145x6000 (сорт 1)",
+      "price": "35 000руб/куб"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5 300 руб/шт."
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Изорок Изолайт (плотность 50) 50мм",
+      "price": "1 200 руб/уп"
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил  Н2030",
+      "price": "456 руб/кв.м."
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "90 270 - 113 800 руб."
+    },
+    {
+      "city": "Пенза",
+      "region": "Пенза",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": "50-54 руб/м."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x132x6000 (сорт АВ)",
+      "price": "1'170 руб/шт."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4'600-5'500 руб/шт."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата (плотность 45) 50мм.",
+      "price": "1'150 руб."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор)  глянец",
+      "price": "546-590 руб/м2."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "95'700 - 143'400 руб."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": "40-57 руб/пог.м."
+    },
+    {
+      "city": "Пятигорск",
+      "region": "Пятигорск",
+      "section": "Банная печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 43'600-47'000 руб."
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "88632769928",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "89282122939",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "88006000995",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "88632228452",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "88633225590",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "88007751771",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Сантехника",
+      "material": "Комплектующие",
+      "category": "Сантехника",
+      "product": "89885300025",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Крепеж",
+      "material": "Комплектующие",
+      "category": "Крепеж",
+      "product": "88632482402",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Баня",
+      "material": "Комплектующие",
+      "category": "Печной комплект",
+      "product": "88005555926",
+      "price": ""
+    },
+    {
+      "city": "Дону",
+      "region": "Ростов на Дону",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Печной комплект",
+      "product": "89889923120",
+      "price": ""
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "258-290 руб/пог.м."
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "5100-5900 руб/шт."
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 35",
+      "price": "50 мм- 200 руб/кв.м, 100мм-400 руб/кв.м."
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,4 мм (цвет на выбор)  Лист 2м",
+      "price": "1248 руб/лист"
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nГлухое окно ПВХ 1700х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. Стоимость с импостом и без. 1 шт.",
+      "price": "125700-15990 руб."
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "7500-8000₽ за 1 бухту(100м)"
+    },
+    {
+      "city": "Самара",
+      "region": "Самара",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 35550-40000 руб."
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "1214 руб/шт."
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "7500 руб/шт."
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор)",
+      "price": "1310 руб/лист"
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая однокамерный стеклопакет",
+      "price": "18930 руб."
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "73-80 руб/пог.м."
+    },
+    {
+      "city": "Санкт Петербург",
+      "region": "Санкт Петербург и обл",
+      "section": "Печь",
+      "material": "Печь",
+      "category": "Баня",
+      "product": "- Печь на 80 кг камней (заводская), топка минимум 6мм\n- Бак на 70 литров. Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; длина 1м; утепленная, 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115; утепленный, 430/40/оц. (заводской)\n- Сэндвич переход D115; длина 1м; 430 0,8/40/оц. (заводской). Переход с неутепленной на утепленную\n- Мастер-флеш силикон\n- Потолочно проходной узел, оцинковка\n- Базальт 3 кг.\n- Фартук\n- Герметик для труб жаростойкий\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 39 700- 45 450 руб."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 45x140x6000 (сорт 1)",
+      "price": "1'400 руб/шт."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4700-5600 руб/шт."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С20 0,45 мм (цвет на выбор)",
+      "price": "643 руб/м2."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "115'500 - 160'050 руб."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5 (100м)",
+      "price": "65-80 руб/пог.м."
+    },
+    {
+      "city": "Саратов",
+      "region": "Саратов",
+      "section": "Банная печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 39'050-45'700 руб."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "1860 руб/шт."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "7750 руб/шт."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "1430-2000 руб/уп."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,4 мм (цвет на выбор)  Лист 2м",
+      "price": "430 руб/кв.м."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Балконная дверь ПВХ  2000х800мм (ВхШ) правая двухкамерный стеклопакет",
+      "price": "17930 руб."
+    },
+    {
+      "city": "обл",
+      "region": "Свердловская обл",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "129 руб/п.м."
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Электрика",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "89388780163",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "89094573131",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "88622524286",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "89891644777",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "88622333063",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "88007751771",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Товары для бани",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "88622355395",
+      "price": ""
+    },
+    {
+      "city": "Сочи",
+      "region": "Сочи",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Печной комплект",
+      "product": "89184111975",
+      "price": ""
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x132x6000 (сорт АВ)",
+      "price": "18'500 руб/куб."
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4'800-5'900 руб/шт."
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утeплитель Утепляев рулон 15 м2",
+      "price": "1'280 руб."
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,3 мм (лист 2м) цвет на выбор",
+      "price": "999-1'099 руб/лист"
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "95'700 - 143'400 руб."
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5 (100м)",
+      "price": "52-55 руб/м."
+    },
+    {
+      "city": "Ставрополь",
+      "region": "Ставрополь",
+      "section": "Банная печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "42'700-46'900 руб."
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x145x4000 (сорт 1)",
+      "price": "1000-1200 руб/шт."
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4300-6040"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "ИЗОВЕР Оптимал 50х600х1000 Базальт (4,8 кв.м, 0,240 куб.м, 8 плиты) пл-ть 35",
+      "price": "1070-1199 руб."
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45мм лист 1,12х1,18",
+      "price": "585-650 руб/кв.м"
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "98 950 - 147 500 руб."
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х1.5",
+      "price": "46-50 руб/п.м."
+    },
+    {
+      "city": "Сыктывкар",
+      "region": "Сыктывкар",
+      "section": "Банная печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 37550-45000 руб."
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Банная печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "8 (996) 741-82-04",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "8 (927) 262-77-87",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "8 (800) 511-97-01",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Кровля",
+      "material": "Профнастил",
+      "category": "Обшивка кровли/стен",
+      "product": "8 (8482) 77-00-10",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "8 (8482) 65-01-73",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "8 (800) 775‒17‒71",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Сантехника",
+      "material": "Комплектующие",
+      "category": "Сантехника",
+      "product": "8 (8482) 69-75-25",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Крепеж",
+      "material": "Комплектующие",
+      "category": "Крепеж",
+      "product": "8 (8482) 61-15-83",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Баня",
+      "material": "Комплектующие",
+      "category": "Печной комплект",
+      "product": "8 (917) 106-99-55",
+      "price": ""
+    },
+    {
+      "city": "Тольятти",
+      "region": "Тольятти",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Грузоперевозки",
+      "category": "Печной комплект",
+      "product": "8 (909) 371‑55‑16",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x145x6000 (сорт 1)",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Грузоперевозки/аренда газели",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Технониколь Роклайт 50мм",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 RAL 7024 2000х1200х0,45 мм",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": ""
+    },
+    {
+      "city": "Тюмень",
+      "region": "Тюмень",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": ""
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "1119 руб/шт."
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "6300 руб."
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": ""
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 0,45 мм (цвет на выбор) Лист 2м",
+      "price": "635 руб/м2."
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\"",
+      "price": "92100-146000 руб."
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "71 руб/м."
+    },
+    {
+      "city": "Ульяновск",
+      "region": "Ульяновск",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 40000-45000 руб."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска сухая строганная 40x140x6000 (сорт 1)",
+      "price": "1411-1587 руб/шт."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4500-5700 руб/шт."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель Rockwool Лайт Баттс ЭКСТРА 50мм",
+      "price": "1200 руб/уп."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Утепление",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С21 1м/1,051",
+      "price": "500 руб/кв.м."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nГлухое окно ПВХ 1700х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. Стоимость с импостом и без. 1 шт.",
+      "price": "107950-145300 руб."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг (А) 3х1.5",
+      "price": "5500 руб."
+    },
+    {
+      "city": "Уфа",
+      "region": "Уфа",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 37550-45000 руб."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Печь",
+      "material": "Пиломатериал",
+      "category": "Каркас домов и дорогих бань",
+      "product": "Доска 40x145x6000 (сорт 1)",
+      "price": "26000-27000 руб/куб."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Фундамент",
+      "material": "Сваи винтовые",
+      "category": "Фундамент",
+      "product": "Свайный винтовой 89х2,5м (оголовок 200х200) с установкой",
+      "price": "4550-5200 руб/шт."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Утепление",
+      "material": "Утеплитель",
+      "category": "Обшивка стен",
+      "product": "Утеплитель минеральная вата плотность 45, толщина 50мм.",
+      "price": "175-180 руб/кв.м."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Кровля",
+      "material": "Комплектующие",
+      "category": "Обшивка кровли/стен",
+      "product": "Профнастил С8 0,4 мм (цвет на выбор)  Лист 2м",
+      "price": "1250 руб/лист"
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Окна/Двери",
+      "material": "ПВХ",
+      "category": "Окна/Двери",
+      "product": "Дверь ПВХ балконная 760х2000 белая. Полностью стеклянная. СПО. 1шт. \nВходная дверь ПВХ 760х2000 (дверной профиль) 2 петли. СПД. Внешняя ламинация: серый антрацит. 1шт.\nОдностворчатое окно ПВХ 500×800. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 1000х1000. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.\nОдностворчатое окно ПВХ 800х1900. 70 профиль. СПД. Внешняя ламинация: серый антрацит. 1 шт.",
+      "price": "97 600-145 350 руб."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Электрика",
+      "material": "Комплектующие",
+      "category": "Электрика",
+      "product": "Кабель силовой ВВГнг(А) 3х2.5",
+      "price": "65-73 руб/п.м."
+    },
+    {
+      "city": "Челябинск",
+      "region": "Челябинск",
+      "section": "Печь",
+      "material": "Баня",
+      "category": "Печной комплект",
+      "product": "Каркасная баня. Объём помещения 18-20м3. \n- Печь на 80 кг камней (заводская), топка минимум 6мм.\n- Бак на 70 л (заводской). Самоварного типа\n- Камни шлифованные 80 кг\n- Сэндвич труба D115; L1м. Утепленная 430 0.8/40/оц. (заводская)\n- Сэндвич зонт D115. Утепленный 430/40/оц. (заводской)\n- Сэндвич переход с неутепленной на утепленную D115; L1м. 430 0,8/40/оц. (заводской)\n- Мастер-флеш силикон\n- Потолочно-проходной узел из оцинковки.\n- Базальт 3 кг\n- Фартук\n- Герметик для труб жаростойкий.\n- Фиброплита серая 1200х600 мм",
+      "price": "Полный комплект 37 550-45 900 руб."
+    }
+  ]
+}

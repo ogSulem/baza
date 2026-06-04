@@ -15,6 +15,7 @@ venv/
 
 # Env files
 .env
+credentials/
 
 # SQLite DB
 *.db

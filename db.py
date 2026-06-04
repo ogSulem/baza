@@ -295,6 +295,19 @@ class Database:
         finally:
             await db.close()
 
+    async def replace_categories(self, items: list[tuple[str, int]]) -> None:
+        """Replace all categories (used when syncing from Google Sheets)."""
+        db = await self.connect()
+        try:
+            await db.execute("DELETE FROM categories")
+            await db.executemany(
+                "INSERT INTO categories(name, sort_order, enabled) VALUES(?, ?, 1)",
+                [(name, sort_order) for name, sort_order in items],
+            )
+            await db.commit()
+        finally:
+            await db.close()
+
     async def add_category(self, name: str) -> None:
         db = await self.connect()
         try:

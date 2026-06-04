@@ -12,6 +12,8 @@ class Config:
     admin_ids: set[int]
     db_path: str
     cities: dict[str, str]
+    google_spreadsheet_id: str | None
+    google_credentials_path: str | None
 
 
 def load_config() -> Config:
@@ -52,4 +54,14 @@ def load_config() -> Config:
             if name:
                 cities[name.casefold()] = name
 
-    return Config(bot_token=bot_token, admin_ids=admin_ids, db_path=db_path, cities=cities)
+    spreadsheet_id = os.getenv("GOOGLE_SPREADSHEET_ID", "").strip() or None
+    credentials_path = os.getenv("GOOGLE_CREDENTIALS_JSON", "").strip() or None
+
+    return Config(
+        bot_token=bot_token,
+        admin_ids=admin_ids,
+        db_path=db_path,
+        cities=cities,
+        google_spreadsheet_id=spreadsheet_id,
+        google_credentials_path=credentials_path,
+    )

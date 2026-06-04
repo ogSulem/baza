@@ -20,6 +20,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from config import Config, load_config
 from db import Database
+from storage import AppStorage, build_storage
 
 
 PHONE_RE = re.compile(r"^(?:\+?7|8)\d{10}$")
@@ -64,8 +65,8 @@ def kb_role_with_admin(is_admin_user: bool) -> InlineKeyboardBuilder:
     return kb
 
 
-async def kb_categories(db: Database) -> InlineKeyboardBuilder:
-    cats = await db.list_enabled_categories()
+async def kb_categories(store: AppStorage) -> InlineKeyboardBuilder:
+    cats = await store.list_enabled_categories()
     kb = InlineKeyboardBuilder()
     for c in cats:
         kb.button(text=c["name"], callback_data=f"cat:{c['id']}")
@@ -107,8 +108,8 @@ def kb_admin() -> InlineKeyboardBuilder:
     return kb
 
 
-async def kb_admin_cats(db: Database) -> InlineKeyboardBuilder:
-    cats = await db.list_categories()
+async def kb_admin_cats(store: AppStorage) -> InlineKeyboardBuilder:
+    cats = await store.list_categories()
     kb = InlineKeyboardBuilder()
     for c in cats:
         suffix = "" if int(c["enabled"]) == 1 else " (выкл)"
@@ -151,14 +152,14 @@ class RateLimitMiddleware(BaseMiddleware):
 
 
 class RegistrationCleanupMiddleware(BaseMiddleware):
-    def __init__(self, db: Database) -> None:
-        self._db = db
+    def __init__(self, store: AppStorage) -> None:
+        self._store = store
 
     async def __call__(self, handler, event, data):
         if not isinstance(event, Message) or not event.from_user:
             return await handler(event, data)
 
-        pending = await self._db.get_pending(event.from_user.id)
+        pending = await self._store.get_pending(event.from_user.id)
         result = await handler(event, data)
 
         if pending:
@@ -177,8 +178,16 @@ async def main() -> None:
     )
 
     cfg = load_config()
-    db = Database(cfg.db_path)
-    await db.init()
+    db_backend = Database(cfg.db_path)
+    store = build_storage(
+        db_backend,
+        spreadsheet_id=cfg.google_spreadsheet_id,
+        credentials_path=cfg.google_credentials_path,
+    )
+    await store.init()
+    if store.uses_sheets:
+        await store.sync_categories_from_sheets_to_db()
+        logging.info("Google Sheets connected, categories synced")
 
     def city_key(raw: str) -> str:
         s = (raw or "").strip().casefold()
@@ -226,7 +235,7 @@ async def main() -> None:
     bot = Bot(cfg.bot_token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
-    dp.message.outer_middleware(RegistrationCleanupMiddleware(db))
+    dp.message.outer_middleware(RegistrationCleanupMiddleware(store))
     dp.callback_query.outer_middleware(RateLimitMiddleware(window_seconds=0.15))
 
     await bot.set_my_commands([
@@ -237,7 +246,7 @@ async def main() -> None:
     logging.info("Bot started: @%s (id=%s)", me.username, me.id)
 
     async def ensure_bot_message(chat_id: int, user_id: int, text: str) -> int | None:
-        pending = await db.get_pending(user_id)
+        pending = await store.get_pending(user_id)
         if pending and pending.bot_message_id:
             try:
                 await bot.edit_message_text(chat_id=chat_id, message_id=pending.bot_message_id, text=text)
@@ -246,7 +255,7 @@ async def main() -> None:
                 pass
         try:
             sent = await bot.send_message(chat_id=chat_id, text=text)
-            await db.upsert_pending(user_id, bot_message_id=sent.message_id)
+            await store.upsert_pending(user_id, bot_message_id=sent.message_id)
             return sent.message_id
         except Exception as e:
             logging.warning("Failed to send/ensure bot message: %r", e)
@@ -291,7 +300,7 @@ async def main() -> None:
         return None
 
     async def show_city_step(chat_id: int, user_id: int, *, show_back: bool = False) -> None:
-        pending = await db.get_pending(user_id)
+        pending = await store.get_pending(user_id)
         msg_id = pending.bot_message_id if pending else None
         text = "Введите город:"
         markup = kb_back_main().as_markup() if show_back else None
@@ -304,7 +313,7 @@ async def main() -> None:
 
         try:
             sent = await bot.send_message(chat_id=chat_id, text=text, reply_markup=markup)
-            await db.upsert_pending(user_id, bot_message_id=sent.message_id)
+            await store.upsert_pending(user_id, bot_message_id=sent.message_id)
         except Exception as e:
             logging.warning("Failed to send city step: %r", e)
 
@@ -314,8 +323,8 @@ async def main() -> None:
         markup = kb_role_with_admin(is_admin(cfg, user_id)).as_markup()
         try:
             sent = await bot.send_message(chat_id=chat_id, text=text, reply_markup=markup)
-            pending = await db.get_pending(user_id)
-            await db.set_pending_exact(
+            pending = await store.get_pending(user_id)
+            await store.set_pending_exact(
                 user_id,
                 phone=phone,
                 city=city,
@@ -352,7 +361,7 @@ async def main() -> None:
         return head
 
     async def build_suppliers_text(*, category: str, city: str | None) -> str:
-        suppliers = await db.find_suppliers(category=category, city=city)
+        suppliers = await store.find_suppliers(category=category, city=city)
         if suppliers:
             lines = ["Найдены поставщики:", ""]
             for s in suppliers:
@@ -360,7 +369,7 @@ async def main() -> None:
                 lines.append("")
             return "\n".join(lines).strip()
 
-        suppliers_any = await db.find_suppliers(category=category, city=None)
+        suppliers_any = await store.find_suppliers(category=category, city=None)
         if suppliers_any:
             lines = ["В вашем городе поставщики не найдены.", "", "Другие города:", ""]
             for s in suppliers_any:
@@ -371,7 +380,7 @@ async def main() -> None:
         return "Поставщики не найдены по вашему запросу."
 
     async def show_role_step(chat_id: int, user_id: int, phone: str, city: str | None) -> None:
-        pending = await db.get_pending(user_id)
+        pending = await store.get_pending(user_id)
         msg_id = pending.bot_message_id if pending else None
         city_line = f"Город: {city}\n" if city else ""
         text = f"Ваш номер: {phone}\n{city_line}\nВы поставщик или заказчик?"
@@ -390,14 +399,14 @@ async def main() -> None:
 
         try:
             sent = await bot.send_message(chat_id=chat_id, text=text, reply_markup=markup)
-            await db.upsert_pending(user_id, bot_message_id=sent.message_id)
+            await store.upsert_pending(user_id, bot_message_id=sent.message_id)
         except Exception as e:
             logging.warning("Failed to send role step: %r", e)
 
     @dp.message(Command("start"))
     async def start(message: Message) -> None:
-        reg_phone, reg_city = await db.get_registered_profile(message.from_user.id)
-        pending = await db.get_pending(message.from_user.id)
+        reg_phone, reg_city = await store.get_registered_profile(message.from_user.id)
+        pending = await store.get_pending(message.from_user.id)
 
         # Commands are set globally at startup, no need for hacky setup_menu_keyboard
 
@@ -417,9 +426,9 @@ async def main() -> None:
         if phone:
             if not pending or not pending.bot_message_id:
                 sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
-                await db.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
+                await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
 
-            await db.upsert_pending(
+            await store.upsert_pending(
                 message.from_user.id,
                 phone=phone,
                 city=city,
@@ -431,7 +440,7 @@ async def main() -> None:
             if city:
                 await show_role_step(message.chat.id, message.from_user.id, phone, city)
             else:
-                await db.upsert_pending(message.from_user.id, state="await_city")
+                await store.upsert_pending(message.from_user.id, state="await_city")
                 await show_city_step(message.chat.id, message.from_user.id)
             return
 
@@ -440,7 +449,7 @@ async def main() -> None:
             message.from_user.id,
             "Отправьте ваш номер телефона (пример: +79991234567)",
         )
-        await db.upsert_pending(
+        await store.upsert_pending(
             message.from_user.id,
             phone=None,
             city=None,
@@ -454,7 +463,7 @@ async def main() -> None:
     async def admin(message: Message) -> None:
         if not is_admin(cfg, message.from_user.id):
             return
-        pending = await db.get_pending(message.from_user.id)
+        pending = await store.get_pending(message.from_user.id)
         if pending and pending.bot_message_id:
             try:
                 await bot.edit_message_text(
@@ -477,11 +486,11 @@ async def main() -> None:
                 )
             except Exception:
                 pass
-            await db.upsert_pending(message.from_user.id, bot_message_id=msg_id)
+            await store.upsert_pending(message.from_user.id, bot_message_id=msg_id)
 
     @dp.message(F.text)
     async def any_text(message: Message) -> None:
-        pending = await db.get_pending(message.from_user.id)
+        pending = await store.get_pending(message.from_user.id)
         if not pending:
             return
 
@@ -506,7 +515,7 @@ async def main() -> None:
 
             # If user tapped "Change phone" we should NOT re-ask city.
             if pending.state == "await_phone_only":
-                await db.set_pending_exact(
+                await store.set_pending_exact(
                     message.from_user.id,
                     phone=phone,
                     city=pending.city,
@@ -519,7 +528,7 @@ async def main() -> None:
                 await show_role_step(message.chat.id, message.from_user.id, phone, pending.city)
                 return
 
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 message.from_user.id,
                 phone=phone,
                 city=None,
@@ -551,7 +560,7 @@ async def main() -> None:
                     pass
                 return
 
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 message.from_user.id,
                 phone=pending.phone,
                 city=city,
@@ -575,14 +584,14 @@ async def main() -> None:
                 pass
 
             if pending.role == "supplier":
-                await db.save_entry(
+                await store.save_entry(
                     user_id=message.from_user.id,
                     role=pending.role,
                     phone=pending.phone,
                     city=pending.city,
                     category=product,
                 )
-                await db.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
+                await store.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
                 try:
                     await bot.edit_message_text(
                         chat_id=message.chat.id,
@@ -596,8 +605,8 @@ async def main() -> None:
                 await send_main_role_message(message.chat.id, message.from_user.id, pending.phone, pending.city)
                 return
 
-            suppliers = await db.find_suppliers(category=product, city=pending.city)
-            await db.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
+            suppliers = await store.find_suppliers(category=product, city=pending.city)
+            await store.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
             text = await build_suppliers_text(category=product, city=pending.city)
 
             try:
@@ -621,7 +630,7 @@ async def main() -> None:
             except Exception:
                 pass
 
-            user_ids = await db.list_all_user_ids()
+            user_ids = await store.list_all_user_ids()
             ok = 0
             fail = 0
             for uid in user_ids:
@@ -631,7 +640,7 @@ async def main() -> None:
                 except Exception:
                     fail += 1
 
-            await db.upsert_pending(message.from_user.id, state=None, payload=None)
+            await store.upsert_pending(message.from_user.id, state=None, payload=None)
             try:
                 await bot.edit_message_text(
                     chat_id=message.chat.id,
@@ -647,17 +656,17 @@ async def main() -> None:
             cat_id_str = pending.payload
             new_name = message.text.strip()
             if new_name:
-                await db.rename_category(int(cat_id_str), new_name)
+                await store.rename_category(int(cat_id_str), new_name)
             try:
                 await message.delete()
             except Exception:
                 pass
-            await db.upsert_pending(message.from_user.id, state=None, payload=None)
-            refreshed = await kb_admin_cats(db)
+            await store.upsert_pending(message.from_user.id, state=None, payload=None)
+            refreshed = await kb_admin_cats(store)
             msg_id = pending.bot_message_id
             if not msg_id:
                 msg_id = await ensure_bot_message(message.chat.id, message.from_user.id, "Категории:")
-                await db.upsert_pending(message.from_user.id, bot_message_id=msg_id)
+                await store.upsert_pending(message.from_user.id, bot_message_id=msg_id)
 
             if msg_id:
                 try:
@@ -675,17 +684,17 @@ async def main() -> None:
         if pending.state == "admin_add" and is_admin(cfg, message.from_user.id):
             name = message.text.strip()
             if name:
-                await db.add_category(name)
+                await store.add_category(name)
             try:
                 await message.delete()
             except Exception:
                 pass
-            await db.delete_pending(message.from_user.id)
-            refreshed = await kb_admin_cats(db)
+            await store.delete_pending(message.from_user.id)
+            refreshed = await kb_admin_cats(store)
             msg_id = pending.bot_message_id
             if not msg_id:
                 msg_id = await ensure_bot_message(message.chat.id, message.from_user.id, "Категории:")
-                await db.upsert_pending(message.from_user.id, bot_message_id=msg_id)
+                await store.upsert_pending(message.from_user.id, bot_message_id=msg_id)
 
             if msg_id:
                 try:
@@ -702,7 +711,7 @@ async def main() -> None:
 
     @dp.message(F.contact)
     async def any_contact(message: Message) -> None:
-        pending = await db.get_pending(message.from_user.id)
+        pending = await store.get_pending(message.from_user.id)
         if not pending or pending.phone is not None:
             return
         if not message.contact or not message.contact.phone_number:
@@ -724,10 +733,10 @@ async def main() -> None:
         except Exception:
             pass
 
-        await db.upsert_pending(message.from_user.id, phone=phone)
+        await store.upsert_pending(message.from_user.id, phone=phone)
         logging.info("Phone accepted (contact) for user_id=%s", message.from_user.id)
         if pending.state == "await_phone_only":
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 message.from_user.id,
                 phone=phone,
                 city=pending.city,
@@ -739,7 +748,7 @@ async def main() -> None:
             )
             await show_role_step(message.chat.id, message.from_user.id, phone, pending.city)
         else:
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 message.from_user.id,
                 phone=phone,
                 city=None,
@@ -753,12 +762,12 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "phone:change")
     async def on_change_phone(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.bot_message_id:
             await cb.answer()
             return
 
-        await db.set_pending_exact(
+        await store.set_pending_exact(
             cb.from_user.id,
             phone=None,
             city=pending.city,
@@ -781,12 +790,12 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "city:change")
     async def on_change_city(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.phone or not pending.bot_message_id:
             await cb.answer()
             return
 
-        await db.set_pending_exact(
+        await store.set_pending_exact(
             cb.from_user.id,
             phone=pending.phone,
             city=None,
@@ -810,7 +819,7 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "nav:back_main")
     async def on_back_main(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.bot_message_id:
             await cb.answer()
             return
@@ -818,7 +827,7 @@ async def main() -> None:
         # Restore previous values saved in payload.
         if pending.state == "await_phone_only" and pending.payload:
             restored_phone = pending.payload
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 cb.from_user.id,
                 phone=restored_phone,
                 city=pending.city,
@@ -834,7 +843,7 @@ async def main() -> None:
 
         if pending.state == "await_city" and pending.payload:
             restored_city = pending.payload
-            await db.set_pending_exact(
+            await store.set_pending_exact(
                 cb.from_user.id,
                 phone=pending.phone,
                 city=restored_city,
@@ -855,37 +864,37 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "nav:back_roles")
     async def on_back_roles(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.phone:
             await cb.answer()
             return
 
         if not pending.city:
-            await db.upsert_pending(cb.from_user.id, role=None, state="await_city", payload=None)
+            await store.upsert_pending(cb.from_user.id, role=None, state="await_city", payload=None)
             await show_city_step(cb.message.chat.id, cb.from_user.id)
             await cb.answer()
             return
 
-        await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+        await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
         await show_role_step(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
         await cb.answer()
 
     @dp.callback_query(F.data.startswith("role:"))
     async def on_role(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or pending.phone is None or not pending.bot_message_id:
             await cb.answer()
             return
 
         role = cb.data.split(":", 1)[1]
-        await db.upsert_pending(cb.from_user.id, role=role)
+        await store.upsert_pending(cb.from_user.id, role=role)
 
         try:
             await bot.edit_message_text(
                 chat_id=cb.message.chat.id,
                 message_id=pending.bot_message_id,
                 text="Выберите категорию:",
-                reply_markup=(await kb_categories(db)).as_markup(),
+                reply_markup=(await kb_categories(store)).as_markup(),
             )
         except Exception:
             pass
@@ -893,35 +902,35 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "again")
     async def on_again(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.phone:
             await cb.answer()
             return
-        await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+        await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
 
         if pending.city:
             await show_role_step(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
         else:
-            await db.upsert_pending(cb.from_user.id, state="await_city")
+            await store.upsert_pending(cb.from_user.id, state="await_city")
             await show_city_step(cb.message.chat.id, cb.from_user.id)
         await cb.answer()
 
     @dp.callback_query(F.data.startswith("cat:"))
     async def on_cat(cb: CallbackQuery) -> None:
-        pending = await db.get_pending(cb.from_user.id)
+        pending = await store.get_pending(cb.from_user.id)
         if not pending or not pending.phone or not pending.role or not pending.bot_message_id:
             await cb.answer()
             return
 
         cat_id = int(cb.data.split(":", 1)[1])
-        cats = await db.list_categories()
+        cats = await store.list_categories()
         cat = next((c for c in cats if int(c["id"]) == cat_id), None)
         if not cat or int(cat["enabled"]) != 1:
             await cb.answer("Категория недоступна", show_alert=False)
             return
 
         if cat["name"].strip().lower() == "другое":
-            await db.upsert_pending(cb.from_user.id, state="await_product", payload=None)
+            await store.upsert_pending(cb.from_user.id, state="await_product", payload=None)
             try:
                 await bot.edit_message_text(
                     chat_id=cb.message.chat.id,
@@ -934,14 +943,14 @@ async def main() -> None:
             return
 
         if pending.role == "supplier":
-            await db.save_entry(
+            await store.save_entry(
                 user_id=cb.from_user.id,
                 role=pending.role,
                 phone=pending.phone,
                 city=pending.city,
                 category=cat["name"],
             )
-            await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+            await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
 
             try:
                 await bot.edit_message_text(
@@ -957,8 +966,8 @@ async def main() -> None:
             await cb.answer()
             return
 
-        suppliers = await db.find_suppliers(category=cat["name"], city=pending.city)
-        await db.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+        suppliers = await store.find_suppliers(category=cat["name"], city=pending.city)
+        await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
         text = await build_suppliers_text(category=cat["name"], city=pending.city)
 
         try:
@@ -980,11 +989,11 @@ async def main() -> None:
             return
 
         if cb.message:
-            await db.upsert_pending(cb.from_user.id, bot_message_id=cb.message.message_id)
+            await store.upsert_pending(cb.from_user.id, bot_message_id=cb.message.message_id)
 
         parts = cb.data.split(":")
         if parts[1] == "panel":
-            pending = await db.get_pending(cb.from_user.id)
+            pending = await store.get_pending(cb.from_user.id)
             if pending and pending.bot_message_id:
                 try:
                     await bot.edit_message_text(
@@ -999,11 +1008,11 @@ async def main() -> None:
             return
 
         if parts[1] == "mail":
-            pending = await db.get_pending(cb.from_user.id)
+            pending = await store.get_pending(cb.from_user.id)
             if not pending or not pending.bot_message_id:
                 await cb.answer()
                 return
-            await db.upsert_pending(cb.from_user.id, state="admin_mail", payload=None)
+            await store.upsert_pending(cb.from_user.id, state="admin_mail", payload=None)
             try:
                 await bot.edit_message_text(
                     chat_id=cb.message.chat.id,
@@ -1017,11 +1026,11 @@ async def main() -> None:
             return
 
         if parts[1] == "match":
-            pending = await db.get_pending(cb.from_user.id)
+            pending = await store.get_pending(cb.from_user.id)
             if not pending or not pending.bot_message_id:
                 await cb.answer()
                 return
-            matches = await db.find_matches()
+            matches = await store.find_matches()
             sent_pairs = set()
             notify_ok = 0
             for m in matches:
@@ -1056,7 +1065,7 @@ async def main() -> None:
             return
         if parts[1] == "export":
             role = parts[2]
-            rows = await db.export_rows(role)
+            rows = await store.export_rows(role)
             output = io.StringIO()
             writer = csv.DictWriter(
                 output,
@@ -1072,12 +1081,12 @@ async def main() -> None:
             return
 
         if parts[1] == "cats":
-            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(db)).as_markup())
+            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(store)).as_markup())
             await cb.answer()
             return
 
         if parts[1] == "cat_add":
-            pending = await db.get_pending(cb.from_user.id)
+            pending = await store.get_pending(cb.from_user.id)
             if pending and pending.bot_message_id:
                 kb = InlineKeyboardBuilder()
                 kb.button(text="Назад", callback_data="admin:cats")
@@ -1091,13 +1100,13 @@ async def main() -> None:
                     )
                 except Exception:
                     pass
-            await db.upsert_pending(cb.from_user.id, state="admin_add", payload=None)
+            await store.upsert_pending(cb.from_user.id, state="admin_add", payload=None)
             await cb.answer()
             return
 
         if parts[1] == "cat":
             cat_id = int(parts[2])
-            cat = await db.get_category(cat_id)
+            cat = await store.get_category(cat_id)
             kb = InlineKeyboardBuilder()
             kb.button(text="Вверх", callback_data=f"admin:cat_move:{cat_id}:up")
             kb.button(text="Вниз", callback_data=f"admin:cat_move:{cat_id}:down")
@@ -1115,8 +1124,8 @@ async def main() -> None:
 
         if parts[1] == "cat_rename":
             cat_id = int(parts[2])
-            await db.upsert_pending(cb.from_user.id, state="admin_rename", payload=str(cat_id))
-            pending = await db.get_pending(cb.from_user.id)
+            await store.upsert_pending(cb.from_user.id, state="admin_rename", payload=str(cat_id))
+            pending = await store.get_pending(cb.from_user.id)
             if pending and pending.bot_message_id:
                 kb = InlineKeyboardBuilder()
                 kb.button(text="Назад", callback_data=f"admin:cat:{cat_id}")
@@ -1135,24 +1144,24 @@ async def main() -> None:
 
         if parts[1] == "cat_toggle":
             cat_id = int(parts[2])
-            await db.toggle_category(cat_id)
-            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(db)).as_markup())
+            await store.toggle_category(cat_id)
+            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(store)).as_markup())
             await cb.answer("Готово")
             return
 
         if parts[1] == "cat_del":
             cat_id = int(parts[2])
-            await db.delete_category(cat_id)
-            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(db)).as_markup())
+            await store.delete_category(cat_id)
+            await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(store)).as_markup())
             await cb.answer("Удалено")
             return
 
         if parts[1] == "cat_move":
             cat_id = int(parts[2])
             direction = parts[3]
-            ok = await db.move_category(cat_id, direction)
+            ok = await store.move_category(cat_id, direction)
             if ok:
-                await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(db)).as_markup())
+                await cb.message.edit_text("Категории:", reply_markup=(await kb_admin_cats(store)).as_markup())
                 await cb.answer("Готово")
             else:
                 await cb.answer("Нельзя переместить", show_alert=False)
