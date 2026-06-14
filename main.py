@@ -65,16 +65,6 @@ def kb_role_with_admin(is_admin_user: bool) -> InlineKeyboardBuilder:
     return kb
 
 
-async def kb_categories(store: AppStorage) -> InlineKeyboardBuilder:
-    cats = await store.list_enabled_categories()
-    kb = InlineKeyboardBuilder()
-    for c in cats:
-        kb.button(text=c["name"], callback_data=f"cat:{c['id']}")
-    kb.button(text="Назад", callback_data="nav:back_roles")
-    kb.adjust(1)
-    return kb
-
-
 def kb_again() -> InlineKeyboardBuilder:
     kb = InlineKeyboardBuilder()
     kb.button(text="Записаться ещё раз", callback_data="again")
@@ -185,9 +175,6 @@ async def main() -> None:
         credentials_path=cfg.google_credentials_path,
     )
     await store.init()
-    if store.uses_sheets:
-        await store.sync_categories_from_sheets_to_db()
-        logging.info("Google Sheets connected, categories synced")
 
     def city_key(raw: str) -> str:
         s = (raw or "").strip().casefold()
@@ -340,10 +327,8 @@ async def main() -> None:
     def format_supplier_line(s: dict) -> str:
         phone = str(s.get("phone") or "").strip()
         name = str(s.get("name") or "").strip()
-        source = str(s.get("source") or "").strip()
         city = str(s.get("city") or "").strip()
 
-        head = ""
         if phone and name:
             head = f"{name}: {phone}"
         elif phone:
@@ -355,29 +340,37 @@ async def main() -> None:
 
         if city:
             head = f"{head} ({city})"
-
-        if source:
-            return f"{head}\n{source}"
         return head
 
-    async def build_suppliers_text(*, category: str, city: str | None) -> str:
-        suppliers = await store.find_suppliers(category=category, city=city)
+    async def build_suppliers_text(*, query: str, city: str | None) -> str:
+        suppliers = await store.find_suppliers(query=query, city=city)
         if suppliers:
-            lines = ["Найдены поставщики:", ""]
+            lines = [f"По запросу «{query}» найдены поставщики:", ""]
             for s in suppliers:
+                supply = (s.get("category") or "").strip()
                 lines.append(format_supplier_line(s))
+                if supply:
+                    lines.append(f"Поставляет: {supply}")
                 lines.append("")
             return "\n".join(lines).strip()
 
-        suppliers_any = await store.find_suppliers(category=category, city=None)
+        suppliers_any = await store.find_suppliers(query=query, city=None)
         if suppliers_any:
-            lines = ["В вашем городе поставщики не найдены.", "", "Другие города:", ""]
+            lines = [
+                f"В городе {city} по запросу «{query}» никого не найдено.",
+                "",
+                "Другие города:",
+                "",
+            ]
             for s in suppliers_any:
+                supply = (s.get("category") or "").strip()
                 lines.append(format_supplier_line(s))
+                if supply:
+                    lines.append(f"Поставляет: {supply}")
                 lines.append("")
             return "\n".join(lines).strip()
 
-        return "Поставщики не найдены по вашему запросу."
+        return f"По запросу «{query}» поставщики не найдены."
 
     async def show_role_step(chat_id: int, user_id: int, phone: str, city: str | None) -> None:
         pending = await store.get_pending(user_id)
@@ -590,6 +583,7 @@ async def main() -> None:
                     phone=pending.phone,
                     city=pending.city,
                     category=product,
+                    name=message.from_user.full_name,
                 )
                 await store.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
                 try:
@@ -601,13 +595,18 @@ async def main() -> None:
                     )
                 except Exception:
                     pass
-
-                await send_main_role_message(message.chat.id, message.from_user.id, pending.phone, pending.city)
                 return
 
-            suppliers = await store.find_suppliers(category=product, city=pending.city)
+            await store.save_entry(
+                user_id=message.from_user.id,
+                role="customer",
+                phone=pending.phone,
+                city=pending.city,
+                category=product,
+                name=message.from_user.full_name,
+            )
+            text = await build_suppliers_text(query=product, city=pending.city)
             await store.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
-            text = await build_suppliers_text(category=product, city=pending.city)
 
             try:
                 await bot.edit_message_text(
@@ -810,11 +809,20 @@ async def main() -> None:
 
     @dp.callback_query(F.data == "ok:delete")
     async def on_ok_delete(cb: CallbackQuery) -> None:
+        pending = await store.get_pending(cb.from_user.id)
+        chat_id = cb.message.chat.id if cb.message else None
         if cb.message:
             try:
                 await cb.message.delete()
             except Exception:
                 pass
+        if pending and pending.phone and chat_id:
+            await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
+            if pending.city:
+                await send_main_role_message(chat_id, cb.from_user.id, pending.phone, pending.city)
+            else:
+                await store.upsert_pending(cb.from_user.id, state="await_city")
+                await show_city_step(chat_id, cb.from_user.id)
         await cb.answer()
 
     @dp.callback_query(F.data == "nav:back_main")
@@ -887,14 +895,18 @@ async def main() -> None:
             return
 
         role = cb.data.split(":", 1)[1]
-        await store.upsert_pending(cb.from_user.id, role=role)
+        await store.upsert_pending(cb.from_user.id, role=role, state="await_product")
+
+        if role == "supplier":
+            prompt = "Что вы поставляете?\n\nНапишите одним сообщением (например: пиломатериал, сваи, окна)."
+        else:
+            prompt = "Что вам нужно поставить?\n\nНапишите одним сообщением (например: доска 40×145, винтовые сваи)."
 
         try:
             await bot.edit_message_text(
                 chat_id=cb.message.chat.id,
                 message_id=pending.bot_message_id,
-                text="Выберите категорию:",
-                reply_markup=(await kb_categories(store)).as_markup(),
+                text=prompt,
             )
         except Exception:
             pass
@@ -913,73 +925,6 @@ async def main() -> None:
         else:
             await store.upsert_pending(cb.from_user.id, state="await_city")
             await show_city_step(cb.message.chat.id, cb.from_user.id)
-        await cb.answer()
-
-    @dp.callback_query(F.data.startswith("cat:"))
-    async def on_cat(cb: CallbackQuery) -> None:
-        pending = await store.get_pending(cb.from_user.id)
-        if not pending or not pending.phone or not pending.role or not pending.bot_message_id:
-            await cb.answer()
-            return
-
-        cat_id = int(cb.data.split(":", 1)[1])
-        cats = await store.list_categories()
-        cat = next((c for c in cats if int(c["id"]) == cat_id), None)
-        if not cat or int(cat["enabled"]) != 1:
-            await cb.answer("Категория недоступна", show_alert=False)
-            return
-
-        if cat["name"].strip().lower() == "другое":
-            await store.upsert_pending(cb.from_user.id, state="await_product", payload=None)
-            try:
-                await bot.edit_message_text(
-                    chat_id=cb.message.chat.id,
-                    message_id=pending.bot_message_id,
-                    text="Введите продукт (нужный или поставляемый):",
-                )
-            except Exception:
-                pass
-            await cb.answer()
-            return
-
-        if pending.role == "supplier":
-            await store.save_entry(
-                user_id=cb.from_user.id,
-                role=pending.role,
-                phone=pending.phone,
-                city=pending.city,
-                category=cat["name"],
-            )
-            await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
-
-            try:
-                await bot.edit_message_text(
-                    chat_id=cb.message.chat.id,
-                    message_id=pending.bot_message_id,
-                    text="Вы успешно записаны в базу, с вами скоро свяжутся.",
-                    reply_markup=kb_ok().as_markup(),
-                )
-            except Exception:
-                pass
-
-            await send_main_role_message(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
-            await cb.answer()
-            return
-
-        suppliers = await store.find_suppliers(category=cat["name"], city=pending.city)
-        await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
-        text = await build_suppliers_text(category=cat["name"], city=pending.city)
-
-        try:
-            await bot.edit_message_text(
-                chat_id=cb.message.chat.id,
-                message_id=pending.bot_message_id,
-                text=text,
-                reply_markup=kb_ok().as_markup(),
-            )
-        except Exception:
-            pass
-
         await cb.answer()
 
     @dp.callback_query(F.data.startswith("admin:"))
@@ -1069,7 +1014,7 @@ async def main() -> None:
             output = io.StringIO()
             writer = csv.DictWriter(
                 output,
-                fieldnames=["id", "user_id", "phone", "city", "category", "created_at"],
+                fieldnames=["id", "user_id", "phone", "city", "category", "name", "created_at"],
                 delimiter=";",
             )
             writer.writeheader()

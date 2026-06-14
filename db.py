@@ -461,51 +461,43 @@ class Database:
         finally:
             await db.close()
 
-    async def find_suppliers(self, *, category: str, city: str | None, limit: int = 30) -> list[dict]:
-        category = (category or "").strip()
-        if not category:
+    async def find_suppliers(self, *, query: str, city: str | None, limit: int = 30) -> list[dict]:
+        from search_match import supply_matches
+
+        query = (query or "").strip()
+        if not query:
             return []
 
         db = await self.connect()
         try:
-            if city:
-                cur = await db.execute(
-                    """
-                    SELECT s.user_id, s.phone, s.city, s.category, s.name, s.source, s.created_at
-                    FROM suppliers s
-                    JOIN (
-                        SELECT user_id, MAX(id) AS max_id
-                        FROM suppliers
-                        WHERE LOWER(category) = LOWER(?) AND city = ?
-                        GROUP BY user_id
-                    ) last
-                      ON last.user_id = s.user_id AND last.max_id = s.id
-                    ORDER BY s.id DESC
-                    LIMIT ?
-                    """,
-                    (category, city, int(limit)),
-                )
-                rows = await cur.fetchall()
-                return [dict(r) for r in rows]
-
             cur = await db.execute(
                 """
-                SELECT s.user_id, s.phone, s.city, s.category, s.name, s.source, s.created_at
-                FROM suppliers s
-                JOIN (
-                    SELECT user_id, MAX(id) AS max_id
-                    FROM suppliers
-                    WHERE LOWER(category) = LOWER(?)
-                    GROUP BY user_id
-                ) last
-                  ON last.user_id = s.user_id AND last.max_id = s.id
-                ORDER BY s.id DESC
-                LIMIT ?
-                """,
-                (category, int(limit)),
+                SELECT user_id, phone, city, category, name, source, created_at
+                FROM suppliers
+                ORDER BY id DESC
+                """
             )
-            rows = await cur.fetchall()
-            return [dict(r) for r in rows]
+            rows = [dict(r) for r in await cur.fetchall()]
+
+            seen: set[str] = set()
+            in_city: list[dict] = []
+            other: list[dict] = []
+            for r in rows:
+                supply = str(r.get("category") or "")
+                if not supply_matches(query, supply):
+                    continue
+                key = f"{r.get('phone')}|{r.get('source')}|{r.get('name')}"
+                if key in seen:
+                    continue
+                seen.add(key)
+                row_city = str(r.get("city") or "").strip()
+                if city and row_city == city:
+                    in_city.append(r)
+                else:
+                    other.append(r)
+
+            out = in_city if in_city else other
+            return out[: int(limit)]
         finally:
             await db.close()
 

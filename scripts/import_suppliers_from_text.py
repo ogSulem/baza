@@ -1,4 +1,4 @@
-"""Импорт из идеальной таблицы в SQLite (legacy) или подсказка использовать Google."""
+"""Импорт xlsx в SQLite (без Google)."""
 
 from __future__ import annotations
 
@@ -28,25 +28,16 @@ async def run(*, db_path: str, input_path: str, sheet: str | None, clear_importe
             await conn.close()
 
     result = parse_file(input_path, sheet_name=sheet)
-    imported = 0
     for s in result.suppliers:
-        phone = s.phone
-        source = s.source
-        if phone.startswith("http"):
-            source, phone = phone, ""
         await db.add_supplier(
             user_id=0,
-            phone=phone or source or "",
+            phone=s.phone,
             city=s.city,
-            category=s.category,
+            category=s.supply,
             name=s.name,
-            source=source,
+            source=None,
         )
-        imported += 1
-
-    await db.replace_categories([(name, i) for i, name in enumerate(result.categories, start=1)])
-    print(f"Imported suppliers: {imported}. Categories: {len(result.categories)}.")
-    print("Для Google Таблиц используйте: python scripts/export_normalized.py или push_to_google.py")
+    print(f"Imported: {len(result.suppliers)}")
 
 
 def main() -> None:
@@ -57,12 +48,7 @@ def main() -> None:
     p.add_argument("--clear-imported", action="store_true")
     args = p.parse_args()
     asyncio.run(
-        run(
-            db_path=args.db,
-            input_path=args.inp,
-            sheet=args.sheet,
-            clear_imported=args.clear_imported,
-        )
+        run(db_path=args.db, input_path=args.inp, sheet=args.sheet, clear_imported=args.clear_imported)
     )
 
 

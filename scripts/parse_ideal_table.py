@@ -1,4 +1,4 @@
-"""Parse «идеальную» таблицу (Поставщики общий список.xlsx) в нормализованные строки."""
+"""Парсер «Поставщики общий список.xlsx» → строки для Google Таблиц."""
 
 from __future__ import annotations
 
@@ -11,10 +11,11 @@ try:
 except Exception:  # pragma: no cover
     openpyxl = None
 
-from contact_utils import normalize_phone, parse_contacts_line
+from contact_utils import contact_phone_field, normalize_phone
+
+URL_RE = re.compile(r"https?://\S+", re.IGNORECASE)
 
 PHONE_RE = re.compile(r"\b(?:\+?7|8)?\d{10}\b")
-URL_RE = re.compile(r"https?://\S+", re.IGNORECASE)
 
 HEADER_KEYS = {
     "no": {"№", "n", "no"},
@@ -38,39 +39,25 @@ SECTION_TITLES = {
     "грузоперевозки/аренда газели",
     "грузоперевозки",
     "товары для бани",
+    "альфа",
 }
 
 REGION_RE = re.compile(r"^каркас\s+(.+)$", re.IGNORECASE)
+MAX_SUPPLY_LEN = 3500
 
 
 @dataclass
 class NormalizedSupplier:
     city: str
     region: str
-    section: str
-    material: str
-    category: str
+    supply: str
     name: str | None
     phone: str
-    source: str | None
-
-
-@dataclass
-class NormalizedProduct:
-    city: str
-    region: str
-    section: str
-    material: str
-    category: str
-    product: str
-    price: str
 
 
 @dataclass
 class ParseResult:
     suppliers: list[NormalizedSupplier] = field(default_factory=list)
-    products: list[NormalizedProduct] = field(default_factory=list)
-    categories: list[str] = field(default_factory=list)
     cities: list[str] = field(default_factory=list)
 
 
@@ -79,7 +66,10 @@ def _cell_str(v) -> str:
         return ""
     if isinstance(v, float) and v.is_integer():
         return str(int(v))
-    return str(v).strip()
+    s = str(v).strip()
+    if re.fullmatch(r"\d+\.0", s):
+        return s[:-2]
+    return s
 
 
 def _header_map(cols: list[str]) -> dict[str, int]:
@@ -95,11 +85,8 @@ def _header_map(cols: list[str]) -> dict[str, int]:
 def _is_numbered_row(cols: list[str]) -> bool:
     if not cols:
         return False
-    first = _cell_str(cols[0])
-    if not first:
-        return False
-    first = first.rstrip(".0") if first.endswith(".0") else first
-    return first.isdigit()
+    first = _cell_str(cols[0]).rstrip(".0")
+    return bool(first) and first.isdigit()
 
 
 def _parse_region_line(line: str) -> tuple[str, str] | None:
@@ -107,23 +94,18 @@ def _parse_region_line(line: str) -> tuple[str, str] | None:
     if not m:
         return None
     region = m.group(1).strip()
-    city = _region_to_city(region)
-    return city, region
+    return _region_to_city(region), region
 
 
 def _region_to_city(region: str) -> str:
-    """Best-effort city for bot matching."""
     r = region.strip()
     low = r.casefold()
-
-    # «Каркас Барнаул» → Барнаул
     if low.startswith("каркас "):
-        r = r.split(None, 1)[-1] if len(r.split()) > 1 else r
-
-    # Explicit city at start before «и … край»
+        parts = r.split(None, 1)
+        r = parts[1] if len(parts) > 1 else r
+        low = r.casefold()
     if " и " in low:
         return r.split(" и ", 1)[0].strip()
-
     known = {
         "алтайский край": "Барнаул",
         "краснодарский край": "Краснодар",
@@ -138,13 +120,9 @@ def _region_to_city(region: str) -> str:
     for key, city in known.items():
         if key in low:
             return city
-
-    # Last token often is city name
     parts = [p for p in re.split(r"\s+", r) if p]
     if len(parts) == 1:
         return parts[0]
-    if parts and parts[0].casefold() == "каркас" and len(parts) > 1:
-        return parts[1]
     return parts[-1] if parts else r
 
 
@@ -152,9 +130,12 @@ def _is_section_title(line: str) -> bool:
     s = line.strip().casefold()
     if not s or "\t" in line:
         return False
-    if len(s) > 50 or any(ch.isdigit() for ch in s):
+    if len(s) > 55:
         return False
-    return s in SECTION_TITLES
+    if s in SECTION_TITLES:
+        return True
+    # «Утепление » with trailing space
+    return s.strip() in SECTION_TITLES
 
 
 def _row_contact(cols: list[str]) -> tuple[str | None, str | None, str | None]:
@@ -162,17 +143,16 @@ def _row_contact(cols: list[str]) -> tuple[str | None, str | None, str | None]:
     if not cells:
         return None, None, None
 
-    # Typical Excel layout: ... | phone | name  OR  ... | url | name
     name = None
     phone = None
-    source = None
+    url = None
 
     if len(cells) >= 2:
         left, right = cells[-2], cells[-1]
         if URL_RE.search(left):
-            source = URL_RE.search(left).group(0)
+            url = URL_RE.search(left).group(0)
             name = right
-        elif PHONE_RE.fullmatch(re.sub(r"[^\d+]", "", left)) or PHONE_RE.search(left):
+        elif PHONE_RE.search(left):
             m = PHONE_RE.search(left)
             phone = normalize_phone(m.group(0)) if m else None
             name = right
@@ -181,31 +161,40 @@ def _row_contact(cols: list[str]) -> tuple[str | None, str | None, str | None]:
             phone = normalize_phone(m.group(0)) if m else None
             name = left
         elif URL_RE.search(right):
-            source = URL_RE.search(right).group(0)
+            url = URL_RE.search(right).group(0)
             name = left
         else:
-            name = right
-            if PHONE_RE.search(left):
-                phone = normalize_phone(PHONE_RE.search(left).group(0))
+            # Имя | телефон (Владивосток)
+            if PHONE_RE.search(right) or URL_RE.search(right):
+                m = PHONE_RE.search(right) or URL_RE.search(right)
+                if m and PHONE_RE.search(right):
+                    phone = normalize_phone(m.group(0))
+                elif URL_RE.search(right):
+                    url = URL_RE.search(right).group(0)
+                name = left
+            else:
+                name = right
+                if PHONE_RE.search(left):
+                    phone = normalize_phone(PHONE_RE.search(left).group(0))
 
-    if not phone and not source:
+    if not phone and not url:
         for c in cells:
             if URL_RE.search(c):
-                source = URL_RE.search(c).group(0)
-            elif PHONE_RE.search(c) and not URL_RE.search(c):
+                url = URL_RE.search(c).group(0)
+            elif PHONE_RE.search(c):
                 m = PHONE_RE.search(c)
                 if m and not phone:
                     phone = normalize_phone(m.group(0))
 
     if not name:
         for c in reversed(cells):
-            if c == (phone or "") or c == (source or ""):
+            if c in {phone or "", url or ""}:
                 continue
             if not PHONE_RE.search(c) and not URL_RE.search(c):
                 name = c
                 break
 
-    return phone, name, source
+    return phone, name, url
 
 
 def _extract_field(cols: list[str], col_map: dict[str, int], key: str) -> str:
@@ -222,6 +211,30 @@ def _trim_leading_empty(cols: list[str]) -> list[str]:
     return out
 
 
+def _build_supply(
+    *,
+    section: str,
+    material: str,
+    purpose: str,
+    products: list[str],
+) -> str:
+    parts: list[str] = []
+    if section:
+        parts.append(f"Раздел: {section}")
+    if material:
+        parts.append(f"Материал: {material}")
+    if purpose:
+        parts.append(f"Назначение: {purpose}")
+    for p in products:
+        p = p.strip()
+        if p:
+            parts.append(f"Товар: {p}")
+    text = " | ".join(parts)
+    if len(text) > MAX_SUPPLY_LEN:
+        text = text[: MAX_SUPPLY_LEN - 3] + "..."
+    return text or purpose or material or section or "Поставщик"
+
+
 def parse_rows(rows: list[list[str]]) -> ParseResult:
     result = ParseResult()
     col_map: dict[str, int] = {}
@@ -230,52 +243,50 @@ def parse_rows(rows: list[list[str]]) -> ParseResult:
     region = ""
     section = ""
     material = ""
-    category = ""
+    purpose = ""
+    block_products: list[str] = []
     in_contacts = False
 
-    categories_seen: set[str] = set()
     cities_seen: set[str] = set()
 
-    def add_supplier(*, phone: str, name: str | None, source: str | None) -> None:
-        cat = (category or section or material or "Другое").strip()
-        if not cat or not city:
+    def reset_block(*, mat: str = "", pur: str = "") -> None:
+        nonlocal material, purpose, block_products
+        material = mat
+        purpose = pur
+        block_products = []
+
+    def append_product(product: str, price: str = "") -> None:
+        product = product.strip()
+        if not product:
             return
-        if not phone and not source:
+        line = product
+        if price:
+            line = f"{product} — {price.strip()}"
+        if line not in block_products:
+            block_products.append(line)
+
+    def add_supplier(*, phone: str | None, name: str | None, url: str | None) -> None:
+        if not city:
             return
-        ph = phone or ""
-        src = source
-        if not ph and src:
-            ph = src
-            src = None
+        ph = contact_phone_field(phone=phone, url=url)
+        if not ph:
+            return
+        supply = _build_supply(
+            section=section,
+            material=material,
+            purpose=purpose,
+            products=block_products,
+        )
         result.suppliers.append(
             NormalizedSupplier(
                 city=city,
                 region=region,
-                section=section,
-                material=material,
-                category=cat,
-                name=name,
+                supply=supply,
+                name=(name or "").strip() or None,
                 phone=ph,
-                source=src,
             )
         )
-        categories_seen.add(cat)
         cities_seen.add(city)
-
-    def add_product(product: str, price: str) -> None:
-        if not product or not city:
-            return
-        result.products.append(
-            NormalizedProduct(
-                city=city,
-                region=region,
-                section=section,
-                material=material,
-                category=category or section,
-                product=product,
-                price=price,
-            )
-        )
 
     for cols in rows:
         cells = _trim_leading_empty([_cell_str(c) for c in cols])
@@ -288,81 +299,74 @@ def parse_rows(rows: list[list[str]]) -> ParseResult:
         low = line.casefold()
         first_nonempty = next((c for c in cells if c.strip()), "")
 
-        if low.startswith("контакты поставщиков") or first_nonempty.casefold().startswith("контакты поставщиков"):
+        if "контакты поставщиков" in low:
             in_contacts = True
-            phone, name, source = _row_contact(cells)
-            if phone or source:
-                add_supplier(phone=phone or "", name=name, source=source)
+            phone, name, url = _row_contact(cells)
+            if phone or url:
+                add_supplier(phone=phone, name=name, url=url)
             continue
 
-        # Header row
         hm = _header_map(cells)
         if hm:
             col_map = hm
+            in_contacts = False
             continue
 
-        # Region: «Каркас Барнаул» (often single cell after empty col A)
-        region_hit = _parse_region_line(first_nonempty)
-        if region_hit is None:
-            region_hit = _parse_region_line(cells[0])
+        region_hit = _parse_region_line(first_nonempty) or _parse_region_line(cells[0] if cells else "")
         if region_hit:
             city, region = region_hit
             in_contacts = False
+            reset_block()
+            section = ""
             cities_seen.add(city)
             continue
 
         if _is_section_title(first_nonempty or line):
             section = (first_nonempty or line).strip()
             in_contacts = False
+            reset_block()
             continue
 
         if _is_numbered_row(cells):
             in_contacts = False
-            material = _extract_field(cells, col_map, "material") or (cells[1] if len(cells) > 1 else "")
-            purpose = _extract_field(cells, col_map, "purpose")
-            if purpose:
-                category = purpose
-                categories_seen.add(category)
-            product = _extract_field(cells, col_map, "product")
+            mat = _extract_field(cells, col_map, "material") or (cells[1] if len(cells) > 1 else "")
+            pur = _extract_field(cells, col_map, "purpose")
+            reset_block(mat=mat, pur=pur)
+            prod = _extract_field(cells, col_map, "product")
             price = _extract_field(cells, col_map, "price")
-            if product:
-                add_product(product, price)
-            phone, name, source = _row_contact(cells)
-            if phone or source:
-                add_supplier(phone=phone or "", name=name, source=source)
+            append_product(prod, price)
+            phone, name, url = _row_contact(cells)
+            if phone or url:
+                add_supplier(phone=phone, name=name, url=url)
             continue
 
         if in_contacts:
             if _is_numbered_row(cells):
                 in_contacts = False
-                material = _extract_field(cells, col_map, "material") or (cells[1] if len(cells) > 1 else "")
-                purpose = _extract_field(cells, col_map, "purpose")
-                if purpose:
-                    category = purpose
+                mat = _extract_field(cells, col_map, "material") or (cells[1] if len(cells) > 1 else "")
+                pur = _extract_field(cells, col_map, "purpose")
+                reset_block(mat=mat, pur=pur)
+                prod = _extract_field(cells, col_map, "product")
+                price = _extract_field(cells, col_map, "price")
+                append_product(prod, price)
                 continue
 
-            phone, name, source = _row_contact(cells)
-            if phone or source:
-                add_supplier(phone=phone or "", name=name, source=source)
+            phone, name, url = _row_contact(cells)
+            if phone or url:
+                add_supplier(phone=phone, name=name, url=url)
             continue
 
-        # Product continuation row (no №)
-        product = _extract_field(cells, col_map, "product") or (cells[3] if len(cells) > 3 else "")
+        prod = _extract_field(cells, col_map, "product") or (cells[3] if len(cells) > 3 else "")
         price = _extract_field(cells, col_map, "price") or (cells[4] if len(cells) > 4 else "")
-        if product:
-            add_product(product, price)
-            # Bashkiria: contact embedded in product row
-            phone, name, source = _row_contact(cells)
-            if phone or source:
-                add_supplier(phone=phone or "", name=name, source=source)
+
+        phone, name, url = _row_contact(cells)
+        if phone or url:
+            add_supplier(phone=phone, name=name, url=url)
             continue
 
-        # Inline contact without «Контакты» block
-        phone, name, source = _row_contact(cells)
-        if phone or source:
-            add_supplier(phone=phone or "", name=name, source=source)
+        if prod:
+            append_product(prod, price)
 
-    result.categories = sorted(categories_seen)
     result.cities = sorted(cities_seen)
     return result
 
@@ -394,37 +398,19 @@ def parse_file(path: str, *, sheet_name: str | None = None) -> ParseResult:
 
 def main() -> None:
     import argparse
-    import json
 
-    ap = argparse.ArgumentParser(description="Parse ideal supplier table → normalized JSON/stats")
+    ap = argparse.ArgumentParser()
     ap.add_argument("--in", dest="inp", required=True)
     ap.add_argument("--sheet", default=None)
-    ap.add_argument("--json", default=None, help="Write full result to JSON file")
-    ap.add_argument("--limit", type=int, default=5, help="Sample suppliers to print")
+    ap.add_argument("--limit", type=int, default=5)
     args = ap.parse_args()
 
     res = parse_file(args.inp, sheet_name=args.sheet)
-    print(f"Cities: {len(res.cities)}")
-    print(f"Categories: {len(res.categories)}")
-    print(f"Suppliers: {len(res.suppliers)}")
-    print(f"Products: {len(res.products)}")
-    print("Categories:", ", ".join(res.categories[:20]), ("..." if len(res.categories) > 20 else ""))
+    print(f"Городов: {len(res.cities)}")
+    print(f"Поставщиков: {len(res.suppliers)}")
     for s in res.suppliers[: args.limit]:
-        print(f"  [{s.city}] {s.category} | {s.name or '-'} | {s.phone[:20]}...")
-    if args.json:
-        Path(args.json).write_text(
-            json.dumps(
-                {
-                    "cities": res.cities,
-                    "categories": res.categories,
-                    "suppliers": [s.__dict__ for s in res.suppliers],
-                    "products": [p.__dict__ for p in res.products],
-                },
-                ensure_ascii=False,
-                indent=2,
-            ),
-            encoding="utf-8",
-        )
+        print(f"\n[{s.city}] {s.name or '-'} | {s.phone[:40]}")
+        print(f"  {s.supply[:120]}...")
 
 
 if __name__ == "__main__":

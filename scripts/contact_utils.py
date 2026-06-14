@@ -20,6 +20,15 @@ def normalize_phone(raw: str) -> str | None:
     return "+" + digits
 
 
+def contact_phone_field(*, phone: str | None, url: str | None) -> str:
+    """В колонку «телефон»: номер, иначе ссылка Avito."""
+    if phone:
+        return phone
+    if url:
+        return url.strip()
+    return ""
+
+
 def parse_contacts_line(line: str) -> tuple[str | None, str | None, str | None]:
     line = (line or "").strip()
     if not line:
@@ -74,5 +83,4 @@ def parse_contacts_line(line: str) -> tuple[str | None, str | None, str | None]:
             if rest:
                 name = rest
 
-    source = url or (phone or None)
-    return phone, name, source
+    return phone, name, url

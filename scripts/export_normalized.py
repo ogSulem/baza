@@ -1,4 +1,4 @@
-"""Экспорт нормализованных данных для Google Таблиц (xlsx с 3 листами или CSV)."""
+"""xlsx «Поставщики общий список» → файл для Google Таблиц."""
 
 from __future__ import annotations
 
@@ -8,95 +8,40 @@ import sys
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-if str(Path(__file__).parent) not in sys.path:
-    sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(Path(__file__).parent))
 
 from parse_ideal_table import parse_file
 
 try:
-    import openpyxl
     from openpyxl import Workbook
 except Exception:  # pragma: no cover
-    openpyxl = None
     Workbook = None  # type: ignore
 
-
-SUPPLIER_HEADERS = [
-    "id",
-    "город",
-    "регион",
-    "раздел",
-    "материал",
-    "категория",
-    "имя",
-    "телефон",
-    "ссылка",
-    "telegram_user_id",
-    "источник",
-    "обновлено",
-]
-
-CUSTOMER_HEADERS = [
-    "id",
-    "telegram_user_id",
-    "телефон",
-    "город",
-    "категория",
-    "имя",
-    "обновлено",
-]
-
-CATEGORY_HEADERS = ["sort_order", "категория", "включена"]
+SUPPLIER_HEADERS = ["id", "город", "что_поставляет", "телефон", "имя", "telegram_user_id", "обновлено"]
+CUSTOMER_HEADERS = ["id", "город", "что_нужно", "телефон", "имя", "telegram_user_id", "обновлено"]
 
 
-def _write_csv(path: Path, headers: list[str], rows: list[list]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.writer(f, delimiter=";")
-        w.writerow(headers)
-        w.writerows(rows)
-
-
-def build_rows(result) -> tuple[list[list], list[list], list[list]]:
-    suppliers: list[list] = []
+def build_supplier_rows(result) -> list[list]:
+    rows: list[list] = []
     for i, s in enumerate(result.suppliers, start=1):
-        phone = s.phone
-        link = ""
-        if phone.startswith("http"):
-            link = phone
-            phone = ""
-        elif s.source:
-            link = s.source
-        suppliers.append(
+        rows.append(
             [
                 i,
                 s.city,
-                s.region,
-                s.section,
-                s.material,
-                s.category,
+                s.supply,
+                s.phone,
                 s.name or "",
-                phone,
-                link,
                 "",
-                "import",
                 "",
             ]
         )
-
-    cat_names = list(result.categories)
-    if "Другое" not in cat_names:
-        cat_names.append("Другое")
-    categories = [[n, name, 1] for n, name in enumerate(cat_names, start=1)]
-    customers: list[list] = []
-    return suppliers, customers, categories
+    return rows
 
 
-def write_workbook(path: Path, suppliers: list[list], customers: list[list], categories: list[list]) -> None:
+def write_workbook(path: Path, suppliers: list[list]) -> None:
     if Workbook is None:
-        raise RuntimeError("openpyxl required")
+        raise RuntimeError("pip install openpyxl")
 
     wb = Workbook()
     ws = wb.active
@@ -107,45 +52,37 @@ def write_workbook(path: Path, suppliers: list[list], customers: list[list], cat
 
     ws2 = wb.create_sheet("Заказчики")
     ws2.append(CUSTOMER_HEADERS)
-    for row in customers:
-        ws2.append(row)
-
-    ws3 = wb.create_sheet("Категории")
-    ws3.append(CATEGORY_HEADERS)
-    for row in categories:
-        ws3.append(row)
 
     path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(path)
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Ideal xlsx → normalized Google Sheets template")
+    ap = argparse.ArgumentParser()
     ap.add_argument("--in", dest="inp", required=True)
     ap.add_argument("--sheet", default=None)
-    ap.add_argument(
-        "--out",
-        default=str(PROJECT_ROOT / "data" / "normalized_for_google.xlsx"),
-        help="Output xlsx path (3 sheets)",
-    )
-    ap.add_argument("--csv-dir", default=None, help="Optional directory for separate CSV files")
+    ap.add_argument("--out", default=str(PROJECT_ROOT / "data" / "google_suppliers.xlsx"))
+    ap.add_argument("--csv", default=None, help="Папка для CSV")
     args = ap.parse_args()
 
     result = parse_file(args.inp, sheet_name=args.sheet)
-    suppliers, customers, categories = build_rows(result)
+    suppliers = build_supplier_rows(result)
 
     out = Path(args.out)
-    write_workbook(out, suppliers, customers, categories)
-    print(f"Written: {out}")
-    print(f"  Поставщики: {len(suppliers)}")
-    print(f"  Категории: {len(categories)}")
-    print(f"  Заказчики: {len(customers)} (пусто до регистраций в боте)")
+    write_workbook(out, suppliers)
+    print(f"Файл: {out}")
+    print(f"Поставщиков: {len(suppliers)}")
 
-    if args.csv_dir:
-        d = Path(args.csv_dir)
-        _write_csv(d / "suppliers.csv", SUPPLIER_HEADERS, suppliers)
-        _write_csv(d / "customers.csv", CUSTOMER_HEADERS, customers)
-        _write_csv(d / "categories.csv", CATEGORY_HEADERS, categories)
+    if args.csv:
+        d = Path(args.csv)
+        d.mkdir(parents=True, exist_ok=True)
+        with (d / "Поставщики.csv").open("w", encoding="utf-8-sig", newline="") as f:
+            w = csv.writer(f, delimiter=";")
+            w.writerow(SUPPLIER_HEADERS)
+            w.writerows(suppliers)
+        with (d / "Заказчики.csv").open("w", encoding="utf-8-sig", newline="") as f:
+            w = csv.writer(f, delimiter=";")
+            w.writerow(CUSTOMER_HEADERS)
         print(f"CSV: {d}")
 
 
