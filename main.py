@@ -342,35 +342,75 @@ async def main() -> None:
             head = f"{head} ({city})"
         return head
 
-    async def build_suppliers_text(*, query: str, city: str | None) -> str:
-        suppliers = await store.find_suppliers(query=query, city=city)
+    async def build_suppliers_text(*, query: str, city: str | None, page: int = 1, per_page: int = 5) -> tuple[str, list[dict], int]:
+        try:
+            suppliers = await store.find_suppliers(query=query, city=city, limit=10000)
+        except Exception as e:
+            logging.error("Failed to search suppliers: %r", e)
+            return "Ошибка при поиске поставщиков. Попробуйте позже.", [], 0
+            
         if suppliers:
-            lines = [f"По запросу «{query}» найдены поставщики:", ""]
-            for s in suppliers:
+            total = len(suppliers)
+            total_pages = (total + per_page - 1) // per_page
+            start_idx = (page - 1) * per_page
+            end_idx = min(start_idx + per_page, total)
+            page_suppliers = suppliers[start_idx:end_idx]
+            
+            lines = [f"По запросу «{query}» найдены поставщики (страница {page}/{total_pages}):", ""]
+            for s in page_suppliers:
                 supply = (s.get("category") or "").strip()
                 lines.append(format_supplier_line(s))
                 if supply:
                     lines.append(f"Поставляет: {supply}")
                 lines.append("")
-            return "\n".join(lines).strip()
+            return "\n".join(lines).strip(), suppliers, total_pages
 
-        suppliers_any = await store.find_suppliers(query=query, city=None)
+        try:
+            suppliers_any = await store.find_suppliers(query=query, city=None, limit=10000)
+        except Exception as e:
+            logging.error("Failed to search suppliers (any city): %r", e)
+            return f"В городе {city} по запросу «{query}» никого не найдено.", [], 0
+            
         if suppliers_any:
+            total = len(suppliers_any)
+            total_pages = (total + per_page - 1) // per_page
+            start_idx = (page - 1) * per_page
+            end_idx = min(start_idx + per_page, total)
+            page_suppliers = suppliers_any[start_idx:end_idx]
+            
             lines = [
                 f"В городе {city} по запросу «{query}» никого не найдено.",
                 "",
                 "Другие города:",
                 "",
             ]
-            for s in suppliers_any:
+            for s in page_suppliers:
                 supply = (s.get("category") or "").strip()
                 lines.append(format_supplier_line(s))
                 if supply:
                     lines.append(f"Поставляет: {supply}")
                 lines.append("")
-            return "\n".join(lines).strip()
+            return "\n".join(lines).strip(), suppliers_any, total_pages
 
-        return f"По запросу «{query}» поставщики не найдены."
+        return f"По запросу «{query}» поставщики не найдены.", [], 0
+
+    def kb_pagination(page: int, total_pages: int, query: str, city: str | None) -> InlineKeyboardBuilder:
+        import base64
+        kb = InlineKeyboardBuilder()
+        if total_pages > 1:
+            # Кодируем query и city в base64 чтобы избежать проблем с двоеточиями
+            query_encoded = base64.b64encode(query.encode('utf-8')).decode('utf-8')
+            city_encoded = base64.b64encode((city or '').encode('utf-8')).decode('utf-8')
+            
+            if page > 1:
+                kb.button(text="◀️", callback_data=f"supp_page:{page-1}:{query_encoded}:{city_encoded}")
+            kb.button(text=f"{page}/{total_pages}", callback_data=f"supp_page:{page}:{query_encoded}:{city_encoded}")
+            if page < total_pages:
+                kb.button(text="▶️", callback_data=f"supp_page:{page+1}:{query_encoded}:{city_encoded}")
+            kb.adjust(3)
+        kb.button(text="Назад", callback_data="nav:back_roles")
+        kb.adjust(1)
+        return kb
 
     async def show_role_step(chat_id: int, user_id: int, phone: str, city: str | None) -> None:
         pending = await store.get_pending(user_id)
@@ -597,23 +637,22 @@ async def main() -> None:
                     pass
                 return
 
-            await store.save_entry(
-                user_id=message.from_user.id,
-                role="customer",
-                phone=pending.phone,
-                city=pending.city,
-                category=product,
-                name=message.from_user.full_name,
+            # Заказчики не сохраняются в Google Sheets, только ищут поставщиков
+            text, suppliers, total_pages = await build_suppliers_text(query=product, city=pending.city, page=1)
+            # Store pagination state in pending
+            await store.upsert_pending(
+                message.from_user.id,
+                state="viewing_suppliers",
+                payload=f"{product}:{pending.city or ''}:1",
+                role=None,
             )
-            text = await build_suppliers_text(query=product, city=pending.city)
-            await store.upsert_pending(message.from_user.id, state=None, payload=None, role=None)
 
             try:
                 await bot.edit_message_text(
                     chat_id=message.chat.id,
                     message_id=pending.bot_message_id,
                     text=text,
-                    reply_markup=kb_ok().as_markup(),
+                    reply_markup=kb_pagination(page=1, total_pages=total_pages, query=product, city=pending.city).as_markup(),
                 )
             except Exception:
                 pass
@@ -886,6 +925,44 @@ async def main() -> None:
         await store.upsert_pending(cb.from_user.id, role=None, state=None, payload=None)
         await show_role_step(cb.message.chat.id, cb.from_user.id, pending.phone, pending.city)
         await cb.answer()
+
+    @dp.callback_query(F.data.startswith("supp_page:"))
+    async def on_supp_page(cb: CallbackQuery) -> None:
+        import base64
+        pending = await store.get_pending(cb.from_user.id)
+        if not pending or not pending.bot_message_id:
+            await cb.answer()
+            return
+
+        try:
+            parts = cb.data.split(":")
+            page = int(parts[1])
+            # Декодируем query и city из base64
+            query = base64.b64decode(parts[2].encode('utf-8')).decode('utf-8')
+            city = base64.b64decode(parts[3].encode('utf-8')).decode('utf-8') if parts[3] else None
+            
+            # Валидация page
+            if page < 1:
+                page = 1
+            
+            text, suppliers, total_pages = await build_suppliers_text(query=query, city=city, page=page)
+            
+            # Update pagination state
+            await store.upsert_pending(
+                cb.from_user.id,
+                payload=f"{query}:{city or ''}:{page}",
+            )
+            
+            await bot.edit_message_text(
+                chat_id=cb.message.chat.id,
+                message_id=pending.bot_message_id,
+                text=text,
+                reply_markup=kb_pagination(page=page, total_pages=total_pages, query=query, city=city).as_markup(),
+            )
+            await cb.answer()
+        except Exception as e:
+            logging.warning("Failed to handle pagination: %r", e)
+            await cb.answer()
 
     @dp.callback_query(F.data.startswith("role:"))
     async def on_role(cb: CallbackQuery) -> None:

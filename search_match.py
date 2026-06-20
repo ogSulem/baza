@@ -22,4 +22,11 @@ def supply_matches(query: str, supply: str) -> bool:
     tokens = _tokens(q)
     if not tokens:
         return False
-    return any(tok in s for tok in tokens)
+    # Check if any token from query matches in supply
+    if any(tok in s for tok in tokens):
+        return True
+    # Also check tokens from supply against query (more flexible matching)
+    supply_tokens = _tokens(s)
+    if any(stok in q for stok in supply_tokens):
+        return True
+    return False
