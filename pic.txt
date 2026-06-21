@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Технологический стек</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #2d2d44; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
+  .container { background: #2b2b40; border: 1px solid #4a4a66; border-radius: 20px; padding: 30px 30px 40px; max-width: 920px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  h1 { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; color: #ffffff; text-align: center; margin-bottom: 30px; letter-spacing: 1px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 auto 20px; max-width: 80%; }
+  .card { background: #35354a; border: 1px solid #4f4f6b; border-radius: 12px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: background 0.2s; }
+  .card:hover { background: #3e3e56; }
+  .card img { width: 48px; height: 48px; object-fit: contain; }
+  .card span { margin-top: 12px; color: #d1d5db; font-size: 14px; font-weight: 500; }
+  @media (max-width: 768px) { 
+    .grid-5, .grid-4 { grid-template-columns: repeat(3, 1fr); max-width: 100%; } 
+    .grid-4 { margin: 0 auto 20px; } 
+  }
+  @media (max-width: 480px) { 
+    .grid-5, .grid-4 { grid-template-columns: repeat(2, 1fr); } 
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Технологический стек</h1>
+
+  <!-- Row 1 -->
+  <div class="grid-5">
+    <div class="card"><img src="https://cdn.simpleicons.org/nextdotjs/white" alt="Next.js"><span>Next.js</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript"><span>TypeScript</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind"><span>Tailwind</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/shadcnui/white" alt="shadcn/ui"><span>shadcn/ui</span></div>
+    <div class="card">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="10" y="22" width="10" height="18" fill="#f59e0b"/><rect x="24" y="12" width="10" height="28" fill="#f59e0b"/><rect x="38" y="30" width="10" height="10" fill="#f59e0b"/><path d="M5,40 h40" stroke="#d1d5db" stroke-width="2"/></svg>
+      <span>Recharts</span>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="grid-4">
+    <div class="card"><img src="https://cdn.simpleicons.org/nestjs" alt="NestJS"><span>NestJS</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/prisma/white" alt="Prisma"><span>Prisma</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL"><span>PostgreSQL</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/jsonwebtokens/white" alt="JWT"><span>JWT</span></div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="grid-5">
+    <div class="card"><img src="https://cdn.simpleicons.org/docker" alt="Docker"><span>Docker</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/eslint" alt="ESLint"><span>ESLint</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/jest" alt="Jest"><span>Jest</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/swagger" alt="Swagger"><span>Swagger</span></div>
+    <div class="card"><img src="https://cdn.simpleicons.org/telegram" alt="Telegram"><span>Telegram</span></div>
+  </div>
+</div>
+</body>
+</html>

@@ -443,9 +443,9 @@ async def main() -> None:
 
         # Commands are set globally at startup, no need for hacky setup_menu_keyboard
 
-        # While waiting for input (phone or product), /start must do nothing.
-        if pending and (pending.phone is None or pending.state in {"await_city", "await_product", "await_phone_only"}):
-            return
+        # При /start всегда отправляем новое сообщение и сбрасываем bot_message_id
+        sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
+        await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
 
         phone = None
         city = None
@@ -457,22 +457,6 @@ async def main() -> None:
             city = reg_city
 
         if phone:
-            # Проверяем что bot_message_id существует и сообщение можно редактировать
-            if not pending or not pending.bot_message_id:
-                sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
-                await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
-            else:
-                # Пытаемся редактировать старое сообщение, если не получится - отправляем новое
-                try:
-                    await bot.edit_message_text(
-                        chat_id=message.chat.id,
-                        message_id=pending.bot_message_id,
-                        text="Загрузка..."
-                    )
-                except Exception:
-                    sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
-                    await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
-
             await store.upsert_pending(
                 message.from_user.id,
                 phone=phone,
