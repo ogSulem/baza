@@ -403,10 +403,10 @@ async def main() -> None:
             city_encoded = base64.b64encode((city or '').encode('utf-8')).decode('utf-8')
             
             if page > 1:
-                kb.button(text="◀️", callback_data=f"supp_page:{page-1}:{query_encoded}:{city_encoded}")
+                kb.button(text="<", callback_data=f"supp_page:{page-1}:{query_encoded}:{city_encoded}")
             kb.button(text=f"{page}/{total_pages}", callback_data=f"supp_page:{page}:{query_encoded}:{city_encoded}")
             if page < total_pages:
-                kb.button(text="▶️", callback_data=f"supp_page:{page+1}:{query_encoded}:{city_encoded}")
+                kb.button(text=">", callback_data=f"supp_page:{page+1}:{query_encoded}:{city_encoded}")
             kb.adjust(3)
         kb.button(text="Назад", callback_data="nav:back_roles")
         kb.adjust(1)
@@ -457,9 +457,21 @@ async def main() -> None:
             city = reg_city
 
         if phone:
+            # Проверяем что bot_message_id существует и сообщение можно редактировать
             if not pending or not pending.bot_message_id:
                 sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
                 await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
+            else:
+                # Пытаемся редактировать старое сообщение, если не получится - отправляем новое
+                try:
+                    await bot.edit_message_text(
+                        chat_id=message.chat.id,
+                        message_id=pending.bot_message_id,
+                        text="Загрузка..."
+                    )
+                except Exception:
+                    sent = await bot.send_message(chat_id=message.chat.id, text="Загрузка...")
+                    await store.upsert_pending(message.from_user.id, bot_message_id=sent.message_id)
 
             await store.upsert_pending(
                 message.from_user.id,

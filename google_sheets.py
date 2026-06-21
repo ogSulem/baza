@@ -251,10 +251,10 @@ class GoogleSheetsStore:
             }
             if city and row_city == city:
                 in_city.append(item)
-            else:
+            elif not city:
                 other.append(item)
 
-        return (in_city if in_city else other)[:limit]
+        return (in_city if city else other)[:limit]
 
     def export_rows(self, role: str) -> list[dict]:
         sheet_name = SHEET_SUPPLIERS if role == "supplier" else SHEET_CUSTOMERS
