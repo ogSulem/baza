@@ -407,9 +407,11 @@ async def main() -> None:
             kb.button(text=f"{page}/{total_pages}", callback_data=f"supp_page:{page}:{query_encoded}:{city_encoded}")
             if page < total_pages:
                 kb.button(text=">", callback_data=f"supp_page:{page+1}:{query_encoded}:{city_encoded}")
-            kb.adjust(3)
-        kb.button(text="Назад", callback_data="nav:back_roles")
-        kb.adjust(1)
+            kb.button(text="Назад", callback_data="nav:back_roles")
+            kb.adjust(4)
+        else:
+            kb.button(text="Назад", callback_data="nav:back_roles")
+            kb.adjust(1)
         return kb
 
     async def show_role_step(chat_id: int, user_id: int, phone: str, city: str | None) -> None:

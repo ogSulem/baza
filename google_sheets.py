@@ -234,12 +234,12 @@ class GoogleSheetsStore:
 
             phone = self._cell(row, ix["phone"])
             name = self._cell(row, ix["name"])
-            key = f"{phone}|{name}"
+            row_city = self._cell(row, ix["city"])
+            # Дедупликация по телефону, имени и городу чтобы избежать дублей
+            key = f"{phone}|{name}|{row_city}"
             if key in seen:
                 continue
             seen.add(key)
-
-            row_city = self._cell(row, ix["city"])
             item = {
                 "user_id": self._cell(row, ix["uid"]),
                 "phone": phone,
@@ -249,7 +249,8 @@ class GoogleSheetsStore:
                 "source": None,
                 "created_at": self._cell(row, ix["updated"]),
             }
-            if city and row_city == city:
+            # Нормализуем города для сравнения (без учёта регистра и пробелов)
+            if city and row_city.strip().casefold() == city.strip().casefold():
                 in_city.append(item)
             elif not city:
                 other.append(item)
